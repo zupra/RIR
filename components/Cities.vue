@@ -11,13 +11,12 @@
       :key="It.id"
     )
       .logo
+        img(
+          :src="require(`~/static/icon/logo_of_сities/${It.id}.png`)"
+        )
       .H.text_x1 {{It.city}}
       .H.my-3 {{It.region}}
       .btn Подробнее
-      
-        
-
-
 </template>
 
 <script>
@@ -95,9 +94,6 @@ export default {
 </script>
 
 <style lang="stylus">
-
-
-
 .Cities
   background #1D3C7A
   color #FFF
@@ -107,8 +103,6 @@ export default {
   position relative
   background #FFF
   padding 70px 0 2em
-
-
   .logo
     position absolute
     circle(100px);
@@ -116,4 +110,7 @@ export default {
     top -50px
     left 50%
     transform translateX(-50%)
+    & img
+      width 100%;
+      height 100%
 </style>
