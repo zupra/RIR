@@ -8,7 +8,7 @@ div.Page
     .subIntro
 
       .BR
-      h2.H В проекте 
+      h2.H В проекте !!!
         br 
         | участвуют
 
