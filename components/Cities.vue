@@ -111,10 +111,8 @@ export default {
 
   .logo
     position absolute
-    width 100px
-    height 100px
+    circle(100px);
     background gold
-    border-radius 50%
     top -50px
     left 50%
     transform translateX(-50%)
