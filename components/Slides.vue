@@ -13,12 +13,14 @@
       v-for="It in slides"
       :key="It.id"
     ) 
+      //- :src="`https://picsum.photos/id/${It.id+10}/300/160`"
+       :src="`~static/img/cities/${It.id}.png`"
       img.img_w(
-        :src="`https://picsum.photos/id/${It.id+10}/300/160`"
+        :src="require(`~/static/img/сities/${It.id}.jpg`)"
       )
 
       .id
-        b {{It.id}}
+        b {{String(It.id).length === 1 ? `0${It.id}` : It.id}}
         small.text_s2 /12
       img.atom(
         src="~static/icon/atom_w.png"
@@ -163,9 +165,7 @@ export default {
 .agile__nav-button
   padding 0
   margin-left 10px
-  width 50px
-  height 50px
-  border-radius 50%
+  circle(50px)
   background #F2F2F2
 
   font-size 2.2em
@@ -183,10 +183,8 @@ export default {
 
 
   .logo
-    width 100px
-    height 100px
+    circle(100px)
     background #000
-    border-radius 50%
     top -50px
     right 1em
 

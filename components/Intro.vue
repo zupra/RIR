@@ -69,16 +69,13 @@
 
 <style lang="stylus">
 
+
 .Intro
   background: #13264D url("~static/img/bg_footer.png") no-repeat center/cover;
   min-height 100vh
   color #FFF
   padding 1em
-  // width: max-content;
 
-
-  .flex_col
-    height 100%
 
   h1
     font-size 60px
@@ -87,8 +84,6 @@
     counter-reset: counter_li;
 
   li
-
-    // margin-bottom 1em
     height 5em
     font-weight bold
     font-size 1.2em
@@ -100,10 +95,8 @@
 
 
     &:before
-
       position absolute
       left 8px
-
       // content ''
       color $blue_l
       counter-increment: counter_li;
@@ -111,13 +104,10 @@
       font-weight 800
       font-size 1.4rem
 
-
-      width 3em
-      height 3em
+      circle(3em)
       line-height 3em
       text-align center
 
-      border-radius 50%
       background #FFF
 
 .topNav

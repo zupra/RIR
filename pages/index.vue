@@ -308,9 +308,7 @@ h2
       position absolute
       left 0
       content ''
-      width 1em
-      height 1em
-      border-radius 50%
+      circle(1em)
       background $blue_l
 
 
