@@ -39,6 +39,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.icon
+  background-color: #CDCDCD
 .baseModules
   color #FFF
   display grid
