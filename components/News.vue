@@ -14,14 +14,11 @@ section
         )
         | &emsp;
         span 30 июл. 2020
-      .H.my-2 Lorem ipsum dolor sit amet
-      p Приглашаем Вас поделиться мнением и принять участие в «Опросе о работе общественного транспорта в Нижегородской области» …
+      p.mt-2 Приглашаем Вас поделиться мнением и принять участие в «Опросе о работе общественного транспорта в Нижегородской области» …
 </template>
 
 <script>
-export default {
-  name: 'News'
-}
+export default {}
 </script>
 
 <style lang="stylus" scoped></style>

@@ -2,7 +2,7 @@
 .Intro
   .wrap
     
-    .topNav.flex.x_sb.y_center
+    .upper.flex.x_sb.y_center
       .flex.y_center
         img(
           src="~static/icon/LOGO.png"
@@ -109,7 +109,4 @@
       text-align center
 
       background #FFF
-
-.topNav
-  text-transform uppercase
 </style>

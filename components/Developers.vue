@@ -17,9 +17,7 @@ section
 </template>
 
 <script>
-export default {
-  name: 'Developers'
-}
+export default {}
 </script>
 
 <style lang="stylus" scoped></style>
