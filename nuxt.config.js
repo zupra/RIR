@@ -27,7 +27,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: './plugins/vue-agile.js', mode: 'client' }],
+  plugins: [
+    { src: './plugins/vue-agile.js', mode: 'client' },
+    { src: './plugins/vue-carousel.js', mode: 'client' }
+    // 'vue-fullpage.js'
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -82,14 +86,19 @@ export default {
     }
   }
   */
+  // https://www.npmjs.com/package/vue-scrollto
+  // https://vue-scrollto.netlify.app/docs/#nuxt-js
 
+  // https://www.npmjs.com/package/vue2-smooth-scroll
+
+  // https://toor.co/blog/nuxtjs-smooth-scrolling-with-hash-links/
   router: {
     scrollBehavior: async (to, from, savedPosition) => {
       if (savedPosition) {
         return savedPosition
       }
 
-      const findEl = async (hash, x) => {
+      const findEl = (hash, x) => {
         return (
           document.querySelector(hash) ||
           new Promise((resolve, reject) => {
@@ -111,6 +120,8 @@ export default {
           return window.scrollTo(0, el.offsetTop)
         }
       }
+
+      // location.href = location.origin
 
       return { x: 0, y: 0 }
     }

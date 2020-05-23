@@ -1,6 +1,19 @@
 <template lang="pug">
   .Page
     Intro
+
+    //-
+      carousel(
+        :navigationEnabled="true"
+        :perPageCustom="[[768, 3], [1024, 4]]"
+      )
+        slide 1
+
+        slide 2
+
+
+
+
     .wrap
       .subIntro
         // Сколько вовлечено в проект
@@ -35,6 +48,8 @@
 </template>
 
 <script>
+//
+
 import Intro from '~/components/Intro.vue'
 import Cities from '~/components/Cities.vue'
 import Form from '~/components/Form.vue'
@@ -65,6 +80,29 @@ export default {
 </script>
 
 <style lang="stylus">
+
+
+// .VueCarousel-slide {
+//   position: relative;
+//   background: #42b983;
+//   color: #fff;
+//   font-family: Arial;
+//   font-size: 24px;
+//   text-align: center;
+//   min-height: 100px;
+// }
+
+// .label {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+// }
+
+
+
+
+
 .subIntro
   line-height 1
   h2
