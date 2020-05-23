@@ -2,18 +2,17 @@
 
 .Cities.py-5
   .wrap
-    h2 Города-участники
-    p Умный город — это целая линейка системных решений для городов разного размера и специфики их развития. Сегодня цифровая платформа «Умный город» развёрнута на территории 12 городов:
+    h2.text_x5 Города-участники
+    p.subText Умный город — это целая линейка системных решений для городов разного размера и специфики их развития. Сегодня цифровая платформа «Умный город» развёрнута на территории 12 городов:
 
   .scrollList
     .city_item.center(
       v-for="It in slides"
       :key="It.id"
     )
-      .logo
-        img(
-          :src="require(`~/static/icon/logo_of_сities/${It.id}.png`)"
-        )
+      img.city_logo(
+        :src="require(`~/static/icon/logo_of_сities/${It.id}.png`)"
+      )
       .H.text_x1 {{It.city}}
       .H.my-3 {{It.region}}
       .btn Подробнее
@@ -93,24 +92,23 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
+
 .Cities
   background #1D3C7A
   color #FFF
 
-.city_item
-  margin-top 60px
-  position relative
-  background #FFF
-  padding 70px 0 2em
-  .logo
+.city
+  &_item
+    margin-top 60px
+    position relative
+    background #FFF
+    padding 70px 0 2em
+  &_logo
+    width 100px
+    // height 100px
     position absolute
-    circle(100px);
-    background gold
     top -50px
     left 50%
     transform translateX(-50%)
-    & img
-      width 100%;
-      height 100%
 </style>

@@ -29,7 +29,8 @@ export default {}
 
 <style lang="stylus">
 .Footer
-  padding 5em 1em
+  background #FEFFFF
+  padding 5em 1em 1em
   color: $header;
 
 .socialsIcon

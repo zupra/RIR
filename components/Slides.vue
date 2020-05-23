@@ -13,8 +13,7 @@
       v-for="It in slides"
       :key="It.id"
     ) 
-      //- :src="`https://picsum.photos/id/${It.id+10}/300/160`"
-       :src="`~static/img/cities/${It.id}.png`"
+
       img.img_w(
         :src="require(`~/static/img/сities/${It.id}.jpg`)"
       )
@@ -25,7 +24,10 @@
       img.atom(
         src="~static/icon/atom_w.png"
       )
-      .logo
+      
+      img.logo(
+        :src="require(`~/static/icon/logo_of_сities/${It.id}.png`)"
+      )
 
 
       .slide_body
@@ -34,8 +36,8 @@
         .description {{It.description}}
 
 
-    template(slot="prevButton") ‹
-    template(slot="nextButton") ›
+    template(slot="prevButton") &nbsp;
+    template(slot="nextButton") &nbsp;
 
 
 </template>
@@ -145,10 +147,11 @@ export default {
   z-index 10
   top 0
   right 0
-  shadow()
+
   width:360px
-  height 400px
-  background: #FFF;
+  height 450px
+
+
   // overflow hidden
 
 .agile
@@ -158,33 +161,51 @@ export default {
   //   overflow-x hidden
 
   &__actions
-    top: 210px;
+    top: 240px;
     // flex-direction: column;
     right: 10px;
     position: absolute;
-.agile__nav-button
-  padding 0
-  margin-left 10px
-  circle(50px)
-  background #F2F2F2
+  &__nav-button
+    padding 0
+    margin-left 10px
+    circle(50px)
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 2px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04);
 
-  font-size 2.2em
-  &:hover
-    background $blue_l
-    color #FFF
+    &:hover
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 2px rgba(0, 0, 0, 0.04), 0px 1px 10px rgba(0, 0, 0, 0.3);
+
+
+    &--prev
+      background url("~static/icon/L.png") no-repeat center
+    &--next
+      background url("~static/icon/R.png") no-repeat center
+// .agile__nav-button--prev
+//   background url('~/static/icon/L.png')
+
 
 
 .slide
+  // shadow()
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 8px rgba(0, 0, 0, 0.13), 0px 2px 27px rgba(0, 0, 0, 0.13);
+  background: #FFF;
   height 400px
+  margin-top 50px
   position relative
+
+
+  &_body
+    padding 1em
+    padding-right 130px
+
+
 
   .id, .atom, .logo
     position absolute
 
 
   .logo
-    circle(100px)
-    background #000
+    // circle(100px)
+    // background #000
     top -50px
     right 1em
 
@@ -196,10 +217,6 @@ export default {
   .atom
     left 1.6em
     top 6em
-
-  &_body
-    padding 1em
-    padding-right 130px
   .city
     color $blue_l
     font-size 2em

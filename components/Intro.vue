@@ -1,25 +1,25 @@
 <template lang="pug">
 .Intro
-  .wrap
-    
-    .upper.flex.x_sb.y_center
-      .flex.y_center
-        img(
-          src="~static/icon/LOGO.png"
-        )
-        .ml-3 умные города
-          br
-          | Росатома
-          
-      .bold
-        b О проекте
-        b.mx-5 Возможности
-        b Подать заявку
+  .wrap.Grid
+    div
+      .upper.flex.x_sb.y_center
+        .flex.y_center
+          img(
+            src="~static/icon/LOGO.png"
+          )
+          .ml-3 умные города
+            br
+            | Росатома
+            
+        .bold
+          b О проекте
+          b.mx-5 Возможности
+          b Подать заявку
 
-    .center
-      img(
-        src="~static/icon/atom.svg"
-      )
+      .center
+        img(
+          src="~static/icon/atom.svg"
+        )
 
 
     .flex_wr.x_sb.y_center
@@ -67,46 +67,54 @@
 
 </template>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 
 
 .Intro
   background: #13264D url("~static/img/bg_footer.png") no-repeat center/cover;
-  min-height 100vh
+  // min-height 100vh
   color #FFF
   padding 1em
 
 
-  h1
-    font-size 60px
 
-  ol
-    counter-reset: counter_li;
-
-  li
-    height 5em
-    font-weight bold
-    font-size 1.2em
+.Grid
+  min-height 100vh
+  display: grid;
+  grid-gap: 10px;
+  grid-template-rows: 160px 1fr;
 
 
-    list-style none
-    padding-left 108px
-    position relative
+h1
+  font-size 60px
+
+ol
+  counter-reset: counter_li;
+
+li
+  height 5em
+  font-weight bold
+  font-size 1.2em
 
 
-    &:before
-      position absolute
-      left 8px
-      // content ''
-      color $blue_l
-      counter-increment: counter_li;
-      content: "0" counter(counter_li);
-      font-weight 800
-      font-size 1.4rem
+  list-style none
+  padding-left 108px
+  position relative
 
-      circle(3em)
-      line-height 3em
-      text-align center
 
-      background #FFF
+  &:before
+    position absolute
+    left 8px
+    // content ''
+    color $blue_l
+    counter-increment: counter_li;
+    content: "0" counter(counter_li);
+    font-weight 800
+    font-size 1.4rem
+
+    circle(3em)
+    line-height 3em
+    text-align center
+
+    background #FFF
 </style>

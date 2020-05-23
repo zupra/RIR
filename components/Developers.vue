@@ -11,9 +11,7 @@ section
       .text_x1.mb-3 Проект Платформа «Умный город»
       p Veniam, id minima sequi nulla, adipisci ullam repudiandae esse iste deleniti eius eveniet? Maiores fugit delectus provident quos sequi veritatis dolor eligendi!
 
-      .bold.mt-3(
-        style="color: #2D71F7;"
-      ) Смотреть проект
+      .link.mt-3 Смотреть проект
 </template>
 
 <script>

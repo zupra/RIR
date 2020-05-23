@@ -15,8 +15,6 @@
         br
         | умные цифровые сервисы
     .BR
-    .BR
-    br
 </template>
 
 <script>
