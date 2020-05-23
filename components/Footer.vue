@@ -1,24 +1,36 @@
 <template lang="pug">
 
-.Footer.wrap.flex_wr.x_sb
-  div
-    h2 Контакты
-    .H АО «Русатом Инфраструктурные решения»
-    p.mb-3 г. Москва, Погорельский переулок, д 7, ст 2
+.Footer.wrap
 
-    img(src='~static/icon/footer_1.png')
-    img.ml-4(src='~static/icon/footer_2.png')
+  .flex_wr.x_sb
+    div
+      h2 Контакты
+      .H АО «Русатом Инфраструктурные решения»
+      p.mb-3 г. Москва, Погорельский переулок, д 7, ст 2
 
-  div
-    .bold.text_x4 +7 (495) 357 00 14
+    div
+      .bold.text_x4.my-1 +7 (495) 357 00 14
 
-  div
-    h2 Поделиться в соцсетях
-    .flex.socialsIcon
-      .icon
-      .icon
-      .icon
-      .icon
+      a.link(
+        href="mailto:info@rusatom-utilities.ru"
+      ) info@rusatom-utilities.ru
+
+    div
+      h2 Поделиться в соцсетях
+      .flex.socialsIcon
+        .icon
+        .icon
+        .icon
+        .icon
+
+  
+  .flex.x_sb.mt-5
+    div
+      img(src='~static/icon/footer_1.png')
+      img.ml-4(src='~static/icon/footer_2.png')
+    div
+      img(src='~static/icon/app_store.png')
+      img.ml-2(src='~static/icon/google_play.png')
 
 
 </template>
@@ -29,8 +41,8 @@ export default {}
 
 <style lang="stylus">
 .Footer
-  background #FEFFFF
-  padding 5em 1em 1em
+  // background #FEFFFF
+  padding 5em 1em 2em
   color: $header;
 
 .socialsIcon

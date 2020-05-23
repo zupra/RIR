@@ -151,15 +151,7 @@ export default {
   width:360px
   height 450px
 
-
-  // overflow hidden
-
 .agile
-  // &__list
-  //   overflow: inherit;
-  //   overflow-y: visible;
-  //   overflow-x hidden
-
   &__actions
     top: 240px;
     // flex-direction: column;
@@ -179,14 +171,13 @@ export default {
       background url("~static/icon/L.png") no-repeat center
     &--next
       background url("~static/icon/R.png") no-repeat center
-// .agile__nav-button--prev
-//   background url('~/static/icon/L.png')
+
 
 
 
 .slide
-  // shadow()
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 8px rgba(0, 0, 0, 0.13), 0px 2px 27px rgba(0, 0, 0, 0.13);
+  //box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 7px rgba(0, 0, 0, 0.13), 0px 2px 20px rgba(0, 0, 0, 0.13);
+  shadow()
   background: #FFF;
   height 400px
   margin-top 50px
