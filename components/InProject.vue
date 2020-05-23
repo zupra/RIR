@@ -1,5 +1,5 @@
 <template lang="pug">
-  section
+  section#About
     .BR
     h2.H В проекте
       br

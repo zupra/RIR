@@ -12,9 +12,18 @@
             | Росатома
             
         .bold
-          b О проекте
-          b.mx-5 Возможности
-          b Подать заявку
+
+          nuxt-link(
+            :to="{ path: '/', hash:'#About'}"
+          ) О проекте
+
+          nuxt-link.mx-5(
+            :to="{ path: '/', hash:'#Capabilities'}"
+          ) Возможности
+
+          nuxt-link(
+            :to="{ path: '/', hash:'#Form'}"
+          ) Подать заявку
 
       .center
         img(
@@ -70,13 +79,18 @@
 <style lang="stylus" scoped>
 
 
+
+
+
 .Intro
   background: #13264D url("~static/img/bg_footer.png") no-repeat center/cover;
   // min-height 100vh
   color #FFF
   padding 1em
 
-
+  a
+    color #FFF
+    text-decoration none
 
 .Grid
   min-height 100vh

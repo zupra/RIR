@@ -1,6 +1,6 @@
 <template lang="pug">
 
-.Form.flex
+#Form.Form.flex
   .Form_wrap
     h2.center Присоединиться 
       br
