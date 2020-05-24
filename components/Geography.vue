@@ -4,7 +4,7 @@ section
   .MAP
     .num.num_bg 12
 
-    .H.upper.text_x3 АТОМНЫХ ГОРОДОВ
+    .H_600.upper атомных городов
     div
       .pulse
       .pulse

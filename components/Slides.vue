@@ -1,43 +1,45 @@
 <template lang="pug">
 
 
-.Slides
-  agile(
-    :dots="false"
-    fade
+  .Slides
 
-    autoplay
-    pause-on-hover
-  )
-    .slide(
-      v-for="It in slides"
-      :key="It.id"
-    ) 
+    client-only
+      agile(
+        :dots="false"
+        fade
 
-      img.img_w(
-        :src="require(`~/static/img/сities/${It.id}.jpg`)"
+        autoplay
+        pause-on-hover
       )
+        .slide(
+          v-for="It in slides"
+          :key="It.id"
+        ) 
 
-      .id
-        b {{String(It.id).length === 1 ? `0${It.id}` : It.id}}
-        small.text_s2 /12
-      img.atom(
-        src="~static/icon/atom_w.png"
-      )
-      
-      img.logo(
-        :src="require(`~/static/icon/logo_of_сities/${It.id}.png`)"
-      )
+          img.img_w(
+            :src="require(`~/static/img/сities/${It.id}.jpg`)"
+          )
+
+          .id
+            b {{String(It.id).length === 1 ? `0${It.id}` : It.id}}
+            small.text_s2 /12
+          img.atom(
+            src="~static/icon/atom_w.png"
+          )
+          
+          img.logo(
+            :src="require(`~/static/icon/logo_of_сities/${It.id}.png`)"
+          )
 
 
-      .slide_body
-        .city {{It.city}}
-        .H.my-2 {{It.region}}
-        .description {{It.description}}
+          .slide_body
+            .city {{It.city}}
+            .H.my-2 {{It.region}}
+            .description {{It.description}}
 
 
-    template(slot="prevButton") &nbsp;
-    template(slot="nextButton") &nbsp;
+        template(slot="prevButton") &nbsp;
+        template(slot="nextButton") &nbsp;
 
 
 </template>

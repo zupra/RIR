@@ -21,11 +21,4 @@
 export default {}
 </script>
 
-<style lang="stylus" scoped>
-
-.H_600
-  font-weight 600
-  color $header
-  font-size 20px
-  line-height 24px
-</style>
+<style lang="stylus" scoped></style>

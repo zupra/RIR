@@ -1,7 +1,7 @@
 <template lang="pug">
   section
-    h2.H  Базовые модули
-    .baseModules.mt-5
+    h2.H.text_x4.mb-3  Базовые модули
+    .baseModules
       .Card.p-3.bg_1
         .flex.x_sb
           h3 Городские

@@ -24,7 +24,7 @@
     label Комментарий
       textarea
 
-    button.mt-3 Отправить
+    button.button.mt-3 Отправить
 
 </template>
 
@@ -58,6 +58,7 @@ input, select, textarea, button
   box-shadow none
   font inherit
   appearance none
+  // border 0
   // ADD
   border-radius 5px
   padding .7em 1em
@@ -66,12 +67,14 @@ input, select, textarea, button
 
 label, select, button
   cursor pointer
-button
+.button
   color $blue_l
   font-weight bold
   padding  .7rem 2rem
-
-  border 0
+  &:hover
+    background $blue_l
+    color #FFF
+    box-shadow: 0px 2px 11px rgba(45, 113, 247, 0.2), 0px 1px 10px rgba(45, 113, 247, 0.15), 0px 1px 11px rgba(45, 113, 247, 0.8);
 
 
 input, textarea, select

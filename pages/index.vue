@@ -1,50 +1,52 @@
 <template lang="pug">
-  .Page
-    Intro
-
-    //-
-      carousel(
-        :navigationEnabled="true"
-        :perPageCustom="[[768, 3], [1024, 4]]"
-      )
-        slide 1
-
-        slide 2
+.Page
+  Intro
 
 
+  //- client-only
+  //-   swiper(
+  //-     :options="swiperOption"
+  //-   )
+  //-     swiper-slide(
+  //-       v-for="_,idx in Array(12)"
+  //-       :key="idx"
+  //-     ) 
+  //-       h1.center {{idx}}
 
+  //-     .swiper-pagination(
+  //-       slot="pagination"
+  //-     )
 
-    .wrap
-      .subIntro
-        // Сколько вовлечено в проект
-        InProject
-        // География
-        Geography
-      //- Возможности
-      Capatibilities
-      .BR
-      //- Базовые модули
-      BaseModules
-      .BR
-      //- Дополнительные модули
-      .BR
-      AdditionalModules
+  .wrap
+    .subIntro
+      // Сколько вовлечено в проект
+      InProject
+      // География
+      Geography
+    //- Возможности
+    Capatibilities
     .BR
+    //- Базовые модули
+    BaseModules
     .BR
-    //- Города-участники
-    Cities
+    //- Дополнительные модули
+    AdditionalModules
+  .BR
+  .BR
+  //- Города-участники
+  Cities
+  .BR
+  .wrap
+    // Разработчики
+    Developers
     .BR
-    .wrap
-      // Разработчики
-      Developers
-      .BR
-      // Новости
-      News
-      .BR
-    // Форма обратной связи
-    Form
-    // Подвал
-    Footer
+    // Новости
+    News
+    .BR
+  // Форма обратной связи
+  Form
+  // Подвал
+  Footer
 </template>
 
 <script>
@@ -76,30 +78,27 @@ export default {
     Geography,
     InProject
   }
+  //= ====
+  /*
+  data() {
+    return {
+      swiperOption: {
+        direction: 'vertical',
+        slidesPerView: 1,
+        spaceBetween: 30,
+        mousewheel: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        }
+      }
+    }
+  }
+  */
 }
 </script>
 
 <style lang="stylus">
-
-
-// .VueCarousel-slide {
-//   position: relative;
-//   background: #42b983;
-//   color: #fff;
-//   font-family: Arial;
-//   font-size: 24px;
-//   text-align: center;
-//   min-height: 100px;
-// }
-
-// .label {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-// }
-
-
 
 
 
@@ -129,30 +128,4 @@ h2
   background #FFF
   &:hover
     transform: translate(0, -6px);
-
-
-
-
-
-
-.scrollList
-  margin 2em 0
-  display: grid;
-  grid-gap: 2em ;
-  grid-template-columns: 1em;
-  grid-template-rows: minmax(8rem, 1fr);
-  grid-auto-flow: column;
-  grid-auto-columns: 310px;
-  overflow-x: scroll;
-  scroll-snap-type: x proximity;
-  scroll-snap-points-x: repeat(100%);
-  scroll-snap-type: mandatory;
-  scroll-snap-destination: 100% 0%;
-  -webkit-overflow-scrolling: touch;
-  &::-webkit-scrollbar
-    display: none;
-  &:before
-  &:after
-    content: '';
-    width: 1em;
 </style>

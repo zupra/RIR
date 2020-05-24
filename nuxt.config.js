@@ -29,7 +29,8 @@ export default {
    */
   plugins: [
     { src: './plugins/vue-agile.js', mode: 'client' },
-    { src: './plugins/vue-carousel.js', mode: 'client' }
+    // { src: './plugins/vue-carousel.js', mode: 'client' },
+    { src: './plugins/vue-awesome-swiper.js', mode: 'client' }
     // 'vue-fullpage.js'
   ],
   /*
@@ -52,7 +53,9 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    // https://github.com/nicolasbeauvais/vue-social-sharing
+    'vue-social-sharing/nuxt'
   ],
   /*
    ** Axios module configuration
