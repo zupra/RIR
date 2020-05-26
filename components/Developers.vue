@@ -23,6 +23,7 @@ section
             p.OVERFLOW {{It.description}}
             a.link.mt-3(
                 :href="It.link"
+                :title="It.title"
                 target="_blank"
               ) Смотреть проект
           picture
@@ -52,7 +53,7 @@ const DATA = [
   },
   {
     id: 2,
-    title: 'LEAN SMART CITY® / «Бережливый умный город»',
+    title: '«Бережливый умный город»',
     description:
       'Технология непрерывного улучшения системы управления городом. Анализируем, выявляем потери, выстраиваем процессы оптимально, результаты закрепляем в цифровых сервисах.',
     link: 'https://rusatom-utilities.ru/smart/smart-city-lsc.php'
@@ -131,16 +132,16 @@ export default {
  .Item
   shadow()
   background #FFF
-  height 250px
+  height 248px
   img
     display block
 .grid
-  padding 1em
-  padding-right 0
+  padding .9em 0 1em 1.2em
+  // padding-right 0
   display: grid;
   // grid-gap: 10px;
   // grid-template-columns: 1fr 1fr;
-  grid-template-rows: 4em 120px 1fr;
+  grid-template-rows: 54px 120px 1fr;
 
 .OVERFLOW
   height 120px
