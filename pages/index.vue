@@ -1,22 +1,6 @@
 <template lang="pug">
 .Page
   Intro
-
-
-  //- client-only
-  //-   swiper(
-  //-     :options="swiperOption"
-  //-   )
-  //-     swiper-slide(
-  //-       v-for="_,idx in Array(12)"
-  //-       :key="idx"
-  //-     ) 
-  //-       h1.center {{idx}}
-
-  //-     .swiper-pagination(
-  //-       slot="pagination"
-  //-     )
-
   .wrap
     .subIntro
       // Сколько вовлечено в проект
@@ -81,17 +65,7 @@ export default {
   //= ====
   /*
   data() {
-    return {
-      swiperOption: {
-        direction: 'vertical',
-        slidesPerView: 1,
-        spaceBetween: 30,
-        mousewheel: true,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true
-        }
-      }
+    return {}
     }
   }
   */
