@@ -122,10 +122,8 @@ export default {
 
 <style lang="stylus" scoped>
 
-
 .swiper
   height 70vh
-
 
 .Intro
   background: #13264D url("~static/img/bg_footer.png") no-repeat center/cover;
