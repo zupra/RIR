@@ -4,6 +4,7 @@ section
 
   client-only
     swiper(
+      ref="mySwiper"
       :options="swiperOption"
     )
       swiper-slide(
@@ -20,6 +21,13 @@ section
 
       .swiper-pagination(
         slot="pagination"
+      )
+
+      .swiper-button-prev(
+          slot="button-prev"
+        )
+      .swiper-button-next(
+        slot="button-next"
       )
 
 
@@ -67,12 +75,17 @@ export default {
         //
         loop: true,
         autoplay: {
-          delay: 2500,
-          disableOnInteraction: false
+          delay: 2500
+          // disableOnInteraction: false
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
         },
         pagination: {
           el: '.swiper-pagination',
           clickable: true
+          // dynamicBullets: true
         },
 
         breakpoints: {
@@ -110,9 +123,15 @@ export default {
 .swiper
   &-container
     padding-bottom: 4em;
-  &-pagination-bullets
-    width: auto //!important
-
+  &-button-next, &-button-prev
+    // position: absolute;
+    outline 0
+    bottom: 0
+    top auto
+   &-button-prev
+     left 3em
+   &-button-next
+     right 3em
 
 .date
   &:before

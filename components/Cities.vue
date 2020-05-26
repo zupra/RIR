@@ -26,12 +26,12 @@
               :href="It.site"
               target="_blank"
             ) Подробнее
-      .swiper-button-prev(
-        slot="button-prev"
-      ) &nbsp;
-      .swiper-button-next(
-        slot="button-next"
-      ) &nbsp;
+        .swiper-button-prev(
+          slot="button-prev"
+        )
+        .swiper-button-next(
+          slot="button-next"
+        )
 
 </template>
 
@@ -167,21 +167,49 @@ export default {
 
 <style lang="stylus" scoped>
 
+
+
+
+
 .swiper
   // &-container
-  //   padding-bottom: 4em;
+  //   padding-top: 1em;
+  &-button-next, &-button-prev
+    // position: absolute;
+    top 50%
+    outline 0
+    mix-blend-mode: hard-light;
 
 
-  &-button-next,
+    circle(50px);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 2px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04);
+
+    &:hover
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 2px rgba(0, 0, 0, 0.04), 0px 1px 10px rgba(0, 0, 0, 0.3);
+    &:after
+      content: '';
+
+    &:before
+      content: '';
+      position absolute
+      // z-index -1
+      width 200px
+      height 500px
+      // background: linear-gradient(90deg, rgba(36, 72, 145, 0.0001) 0%, rgba(36, 72, 145, 0.5) 98.56%);
+      // transform: matrix(-1, 0, 0, 1, 0, 0);
+      // background: linear-gradient(90deg, rgba(36, 72, 145, 0.0001) 0.52%, rgba(36, 72, 145, 0.5) 99.81%);
+
   &-button-prev
-    position: absolute;
-    width 50px
-    height 50px
-    background #000
+    background: #FFF url('~static/icon/L.png') no-repeat center;
+    &:before
+      background: linear-gradient(90deg, rgba(36, 72, 145, 0.5) 0%, rgba(36, 72, 145, 0.0001) 98.56%);
+  &-button-next
+    background: #FFF url('~static/icon/R.png') no-repeat center;
+    &:before
+      background: linear-gradient(90deg, rgba(36, 72, 145, 0.0001) 0%, rgba(36, 72, 145, 0.5) 98.56%);
 
-  &-pagination-bullets
-    width: auto //!important
-
+  // &-pagination-bullets
+  //   width: auto; // !important
 
 
 

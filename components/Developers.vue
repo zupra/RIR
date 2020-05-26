@@ -28,6 +28,13 @@ section
       .swiper-pagination(
         slot="pagination"
       )
+      .swiper-button-prev(
+        slot="button-prev"
+      )
+      .swiper-button-next(
+        slot="button-next"
+      )
+
 </template>
 <script>
 const DATA = [
@@ -80,6 +87,10 @@ export default {
         //   delay: 2500,
         //   disableOnInteraction: false
         // },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
         pagination: {
           el: '.swiper-pagination',
           clickable: true
@@ -123,7 +134,14 @@ export default {
 
 .swiper
   &-container
-    padding: 1em 0 4em;
-  &-pagination-bullets
-    width: auto //!important
+    padding-bottom: 4em;
+  &-button-next, &-button-prev
+    // position: absolute;
+    outline 0
+    top auto
+    bottom: 0
+   &-button-prev
+     left 3em
+   &-button-next
+     right 3em
 </style>
