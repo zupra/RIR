@@ -17,13 +17,18 @@ section
         v-for="It in slides"
         :key="It.id"
       ) 
-        .Card.p-4
-          .H.text_x1.mb-3 {{It.title}}
-          p.OVERFLOW {{It.description}}
-          a.link.mt-3(
-              :href="It.link"
-              target="_blank"
-            ) Смотреть проект
+        .Item.flex.y_center
+          .grid
+            .H.text_x1.mb-3 {{It.title}}
+            p.OVERFLOW {{It.description}}
+            a.link.mt-3(
+                :href="It.link"
+                target="_blank"
+              ) Смотреть проект
+          picture
+            img(
+              :src="require(`~/static/img/projects/${It.id}.png`)"
+            )
 
       .swiper-pagination(
         slot="pagination"
@@ -98,21 +103,21 @@ export default {
 
         breakpoints: {
           1024: {
-            slidesPerView: 4,
+            slidesPerView: 3,
             spaceBetween: 40
           },
           768: {
-            slidesPerView: 3,
+            slidesPerView: 2,
             spaceBetween: 50
           },
           640: {
             slidesPerView: 2,
             spaceBetween: 50
-          },
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 10
           }
+          // 320: {
+          //   slidesPerView: 1,
+          //   spaceBetween: 10
+          // }
         }
       }
     }
@@ -123,14 +128,25 @@ export default {
 <style lang="stylus" scoped>
 
 
-.Card
+ .Item
+  shadow()
+  background #FFF
+  height 250px
+  img
+    display block
+.grid
+  padding 1em
+  padding-right 0
   display: grid;
-  grid-gap: 10px;
+  // grid-gap: 10px;
+  // grid-template-columns: 1fr 1fr;
   grid-template-rows: 4em 120px 1fr;
 
 .OVERFLOW
   height 120px
   overflow hidden
+
+
 
 .swiper
   &-container
