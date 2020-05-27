@@ -29,8 +29,10 @@ export default {
    */
   plugins: [
     { src: './plugins/vue-agile.js', mode: 'client' },
-    // { src: './plugins/vue-carousel.js', mode: 'client' },
-    { src: './plugins/vue-awesome-swiper.js', mode: 'client' }
+    // { src: './plugins/vue-animate-onscroll.js', mode: 'client' },
+    { src: './plugins/vue-awesome-swiper.js', mode: 'client' },
+    './plugins/vue-scrollto.js'
+
     // 'vue-fullpage.js'
   ],
   /*
@@ -55,7 +57,11 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     // https://github.com/nicolasbeauvais/vue-social-sharing
-    'vue-social-sharing/nuxt'
+    'vue-social-sharing/nuxt',
+
+    // https://vue-scrollto.netlify.app/docs/
+    'vue-scrollto/nuxt'
+    // ['vue-scrollto/nuxt', { duration: 700 }]
   ],
   /*
    ** Axios module configuration
@@ -70,31 +76,14 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
-  },
+  }
 
   /*
    ** Router configuration
    */
 
   /*
-  router: {
-    scrollBehavior(to) {
-      if (to.hash) {
-        return window.scrollTo({
-          top: document.querySelector(to.hash).offsetTop + window.innerHeight,
-          behavior: 'smooth'
-        })
-      }
-      return window.scrollTo({ top: 0, behavior: 'smooth' })
-    }
-  }
-  */
-  // https://www.npmjs.com/package/vue-scrollto
-  // https://vue-scrollto.netlify.app/docs/#nuxt-js
-
-  // https://www.npmjs.com/package/vue2-smooth-scroll
-
-  // https://toor.co/blog/nuxtjs-smooth-scrolling-with-hash-links/
+  
   router: {
     scrollBehavior: async (to, from, savedPosition) => {
       if (savedPosition) {
@@ -124,9 +113,8 @@ export default {
         }
       }
 
-      // location.href = location.origin
-
       return { x: 0, y: 0 }
     }
   }
+  */
 }

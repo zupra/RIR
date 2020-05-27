@@ -3,7 +3,9 @@
   .topLine
     .wrap
       .upper.flex.x_sb.y_center
-        .flex.y_center
+        .flex.y_center(
+          v-scroll-to="'#Form'"
+        )
           img(
             src="~static/icon/LOGO.png"
           )
@@ -11,15 +13,26 @@
             br
             | Росатома
         .bold
-          nuxt-link(
-            :to="{ path: '/', hash:'#About'}"
+          b(
+            v-scroll-to="'#About'"
           ) О проекте
-          nuxt-link.mx-5(
-            :to="{ path: '/', hash:'#Capabilities'}"
+          b.mx-5(
+            v-scroll-to="'#Capabilities'"
           ) Возможности
-          nuxt-link(
-            :to="{ path: '/', hash:'#Form'}"
+          b(
+            v-scroll-to="'#Form'"
           ) Подать заявку
+
+          //-
+            nuxt-link(
+              :to="{ path: '/', hash:'#About'}"
+            ) О проекте
+            nuxt-link.mx-5(
+              :to="{ path: '/', hash:'#Capabilities'}"
+            ) Возможности
+            nuxt-link(
+              :to="{ path: '/', hash:'#Form'}"
+            ) Подать заявку
 
       .center
         img(
@@ -111,7 +124,7 @@ export default {
       swiperOption: {
         mousewheel: true,
         // effect: 'fade',
-        loop: true,
+        // loop: true,
         direction: 'vertical',
         autoplay: {
           delay: 3000,
