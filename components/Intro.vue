@@ -47,7 +47,7 @@
               | интегратор по направлению “Умный город”
             .btn.my-5 Узнать больше о решении
           //
-          IntroOl
+          IntroOl_1
  
       swiper-slide.wrap(
       ) 
@@ -63,7 +63,7 @@
               | взаимодействия власти и жителей 
             .btn.my-5 Узнать больше о решении
           //
-          IntroOl
+          //- IntroOl_1
       
 
    
@@ -84,7 +84,7 @@
               .btn_lite Для города 
             .btn.my-5 Узнать больше о решении
           //
-          IntroOl    
+          //- IntroOl    
       
       
       
@@ -95,10 +95,14 @@
 </template>
 
 <script>
-import IntroOl from '~/components/IntroOl.vue'
+import IntroOl_1 from '~/components/IntroOl_1.vue'
+// import IntroOl_2 from '~/components/IntroOl_2.vue'
+// import IntroOl_3 from '~/components/IntroOl_3.vue'
 export default {
   components: {
-    IntroOl
+    IntroOl_1
+    // IntroOl_2,
+    // IntroOl_3
   },
   data() {
     return {

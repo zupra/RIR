@@ -1,4 +1,4 @@
-<template lang="pug">
+<template lang="pug" functional>
 div
   .flex.y_center.mb-4
     img(
