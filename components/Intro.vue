@@ -63,7 +63,7 @@
               | взаимодействия власти и жителей 
             .btn.my-5 Узнать больше о решении
           //
-          //- IntroOl_1
+          IntroOl_2
       
 
    
@@ -83,8 +83,10 @@
               .btn_lite.mx-3 Для бизнеса
               .btn_lite Для города 
             .btn.my-5 Узнать больше о решении
-          //
-          //- IntroOl    
+
+          //- IntroOl_3
+          .flex
+            .m_auto.m-3.text_x4 ШАРИКИ ?
       
       
       
@@ -96,12 +98,12 @@
 
 <script>
 import IntroOl_1 from '~/components/IntroOl_1.vue'
-// import IntroOl_2 from '~/components/IntroOl_2.vue'
+import IntroOl_2 from '~/components/IntroOl_2.vue'
 // import IntroOl_3 from '~/components/IntroOl_3.vue'
 export default {
   components: {
-    IntroOl_1
-    // IntroOl_2,
+    IntroOl_1,
+    IntroOl_2
     // IntroOl_3
   },
   data() {
@@ -110,13 +112,14 @@ export default {
         // effect: 'fade',
         // loop: true,
         direction: 'vertical',
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false
-        },
+        // autoplay: {
+        //   delay: 3000,
+        //   disableOnInteraction: false
+        // },
         pagination: {
           el: '.swiper-pagination',
-          clickable: true
+          clickable: true,
+          dynamicBullets: true
         }
       }
     }
@@ -127,7 +130,16 @@ export default {
 <style lang="stylus" scoped>
 
 .swiper
-  height 70vh
+  height 600px //calc(100% - 160px)
+
+  &-pagination-bullet
+    // opacity: initial;
+    // background rgba(#FFF, .3) !important
+    background: #FFF;
+  &-pagination-bullet-active
+    background #FFF
+  // &-pagination-bullet-active-main
+
 
 .Intro
   background: #13264D url("~static/img/bg_footer.png") no-repeat center/cover;
@@ -156,7 +168,7 @@ export default {
   // min-height 100vh
   // grid-gap: 10px;
   display: grid;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr 1fr;
 
 
 h1

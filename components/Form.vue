@@ -58,7 +58,7 @@ input, select, textarea, button
   box-shadow none
   font inherit
   appearance none
-  // border 0
+  border 0
   // ADD
   border-radius 5px
   padding .7em 1em
