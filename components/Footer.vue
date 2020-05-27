@@ -43,8 +43,8 @@
 
   .flex.x_sb.mt-5
     .flex.y_center
-      img(src='~static/icon/footer_1.png')
-      img.ml-4(src='~static/icon/footer_2.png')
+      img(src='~static/icon/footer_1.svg')
+      img.ml-4(src='~static/icon/footer_2.svg')
     div
       img(src='~static/icon/app_store.png')
       img.ml-2(src='~static/icon/google_play.png')
