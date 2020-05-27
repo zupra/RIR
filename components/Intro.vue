@@ -109,13 +109,14 @@ export default {
   data() {
     return {
       swiperOption: {
+        mousewheel: true,
         // effect: 'fade',
-        // loop: true,
+        loop: true,
         direction: 'vertical',
-        // autoplay: {
-        //   delay: 3000,
-        //   disableOnInteraction: false
-        // },
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false
+        },
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
