@@ -175,38 +175,34 @@ export default {
   // &-container
   //   padding-top: 1em;
   &-button-next, &-button-prev
-    // position: absolute;
-    top 50%
     outline 0
-    mix-blend-mode: hard-light;
-
-
-    circle(50px);
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 2px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04);
-
+    top 1.5em;
+    height 100%
+    width 100px
+    cursor none
+    // reset
+    // &:before
+    //   content: '';
     &:hover
-      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 2px rgba(0, 0, 0, 0.04), 0px 1px 10px rgba(0, 0, 0, 0.3);
+      &:after
+        box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 5px 8px rgba(0,0,0,.14), 0 1px 14px rgba(0,0,0,.12);
     &:after
+      cursor pointer
       content: '';
-
-    &:before
-      content: '';
-      position absolute
-      // z-index -1
-      width 200px
-      height 500px
-      // background: linear-gradient(90deg, rgba(36, 72, 145, 0.0001) 0%, rgba(36, 72, 145, 0.5) 98.56%);
-      // transform: matrix(-1, 0, 0, 1, 0, 0);
-      // background: linear-gradient(90deg, rgba(36, 72, 145, 0.0001) 0.52%, rgba(36, 72, 145, 0.5) 99.81%);
+      circle(50px);
+      background #FFF
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 2px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04);
 
   &-button-prev
-    background: #FFF url('~static/icon/L.png') no-repeat center;
-    &:before
-      background: linear-gradient(90deg, rgba(36, 72, 145, 0.5) 0%, rgba(36, 72, 145, 0.0001) 98.56%);
+    left 0
+    background: linear-gradient(90deg, rgba(36, 72, 145, 0.5) 0%, rgba(36, 72, 145, 0.0001) 98.56%);
+    &:after
+      background: #FFF url('~static/icon/L.png') no-repeat center;
   &-button-next
-    background: #FFF url('~static/icon/R.png') no-repeat center;
-    &:before
-      background: linear-gradient(90deg, rgba(36, 72, 145, 0.0001) 0%, rgba(36, 72, 145, 0.5) 98.56%);
+    right: 0
+    background: linear-gradient(90deg, rgba(36, 72, 145, 0.0001) 0%, rgba(36, 72, 145, 0.5) 98.56%);
+    &:after
+      background: #FFF url('~static/icon/R.png') no-repeat center;
 
   // &-pagination-bullets
   //   width: auto; // !important

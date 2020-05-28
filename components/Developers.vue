@@ -10,7 +10,7 @@ section
 
   .BR
   client-only
-    swiper(
+    swiper.swiper(
       :options="swiperOption"
     )
       swiper-slide(
@@ -34,9 +34,9 @@ section
       .swiper-pagination(
         slot="pagination"
       )
-      .swiper-button-prev(
-        slot="button-prev"
-      )
+      //- .swiper-button-prev(
+      //-   slot="button-prev"
+      //- )
       .swiper-button-next(
         slot="button-next"
       )
@@ -94,8 +94,8 @@ export default {
         //   disableOnInteraction: false
         // },
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
+          nextEl: '.swiper-button-next'
+          // prevEl: '.swiper-button-prev'
         },
         pagination: {
           el: '.swiper-pagination',
@@ -105,7 +105,7 @@ export default {
         breakpoints: {
           1024: {
             slidesPerView: 3,
-            spaceBetween: 40
+            spaceBetween: 20
           },
           768: {
             slidesPerView: 2,
@@ -133,15 +133,17 @@ export default {
   shadow()
   background #FFF
   height 248px
-  img
-    display block
+  // img
+  //   display block
 .grid
   padding .9em 0 1em 1.2em
   // padding-right 0
   display: grid;
+  // height 392px
+  // overflow hidden
   // grid-gap: 10px;
   // grid-template-columns: 1fr 1fr;
-  grid-template-rows: 54px 120px 1fr;
+  grid-template-rows: 64px 120px 1fr;
 
 .OVERFLOW
   height 120px
@@ -150,8 +152,11 @@ export default {
 
 
 .swiper
+  margin 0 -8px
+  padding 0 4px
   &-container
     padding-bottom: 4em;
+  /*
   &-button-next, &-button-prev
     // position: absolute;
     outline 0
@@ -161,4 +166,34 @@ export default {
      left 3em
    &-button-next
      right 3em
+  */
+
+
+  &-button-next, &-button-prev
+    outline 0
+    // top 1.5em;
+    height 260px //calc(100% - 4em)
+    top 1em
+    width 100px
+    cursor none
+    &:hover
+      &:after
+        box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 5px 8px rgba(0,0,0,.14), 0 1px 14px rgba(0,0,0,.12);
+    &:after
+      cursor pointer
+      content: '';
+      circle(50px);
+      background #FFF
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 2px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04);
+
+  &-button-prev
+    left 0
+    background: linear-gradient(90deg, rgba(#000, 0.3) 0%, rgba(#000, 0.0001) 99%);
+    &:after
+      background: #FFF url('~static/icon/L.png') no-repeat center;
+  &-button-next
+    right: 0
+    background: linear-gradient(90deg, rgba(#F7F7F7, 0.0001) 0%, rgba(#F7F7F7, 0.3) 99%);
+    &:after
+      background: #FFF url('~static/icon/R.png') no-repeat center;
 </style>

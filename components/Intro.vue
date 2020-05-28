@@ -12,14 +12,14 @@
           .ml-3 умные города
             br
             | Росатома
-        .bold
-          b(
+        div
+          b.scrollTo(
             v-scroll-to="'#About'"
           ) О проекте
-          b.mx-5(
+          b.scrollTo.mx-5(
             v-scroll-to="'#Capabilities'"
           ) Возможности
-          b(
+          b.scrollTo(
             v-scroll-to="'#Form'"
           ) Подать заявку
 
@@ -47,7 +47,8 @@
     )
       swiper-slide.wrap(
       ) 
-        .flex_wr.x_sb.y_center
+        //- .flex_wr.x_sb.y_center
+        .Grid
           div
             .bold.text_x2.upper.mb-3 Разработчик 
             h1 Русатом 
@@ -60,11 +61,14 @@
               | интегратор по направлению “Умный город”
             .btn.my-5 Узнать больше о решении
           //
-          IntroOl_1
+          IntroOl_1(
+            style="margin-right: -4em"
+          )
  
       swiper-slide.wrap(
       ) 
-        .flex_wr.x_sb.y_center
+        //- .flex_wr.x_sb.y_center
+        .Grid
           div
             h1 Цифровая 
               br
@@ -82,7 +86,7 @@
    
       swiper-slide.wrap(
       ) 
-        .flex_wr.x_sb.y_center
+        .flex.x_sb.y_center
           div
             .bold.text_x2.upper.mb-3 РЕШЕНИЕ 
             h1 Умные города 
@@ -99,7 +103,21 @@
 
           //- IntroOl_3
           .flex
-            .m_auto.m-3.text_x4 ШАРИКИ ?
+            //- .m_auto.m-3.text_x4 ШАРИКИ ?
+            .m_auto.flex.y_center
+              .BALL.BALL_1.flex
+                img.m_auto(
+                  width="320px"
+                  src="~static/icon/gifs/2.gif"
+                )
+              .flex_col.x_sa
+                .BALL.BALL_2
+                br
+                .BALL.BALL_3.flex
+                  img.m_auto(
+                    width="260px"
+                    src="~static/icon/gifs/5.gif"
+                  )
       
       
       
@@ -122,18 +140,24 @@ export default {
   data() {
     return {
       swiperOption: {
-        mousewheel: true,
-        // effect: 'fade',
+        // mousewheel: true,
+        effect: 'fade',
+        speed: 1000,
         // loop: true,
         direction: 'vertical',
+        resistance: false,
         autoplay: {
-          delay: 3000,
-          disableOnInteraction: false
+          delay: 3000
+          // stopOnLastSlide: true
+          // disableOnInteraction: false
         },
         pagination: {
           el: '.swiper-pagination',
-          clickable: true,
+          // clickable: true,
           dynamicBullets: true
+          // bulletClass: 'bullet',
+          // bulletActiveClass: 'bullet-active'
+          // type: 'fraction'
         }
       }
     }
@@ -143,15 +167,46 @@ export default {
 
 <style lang="stylus" scoped>
 
+
+.scrollTo
+  cursor pointer
+
+
+.BALL
+  background #FFF
+  &_1
+    circle(400px)
+    // background  #FFF url("~static/icon/gifs/2.gif") center no-repeat
+  &_2
+    circle(250px)
+    background  #FFF url("~static/icon/ball_atom.svg") center no-repeat
+  &_3
+    circle(300px)
+    // background  #FFF url("~static/icon/gifs/5.gif") center no-repeat
+
+
+
+
+
+
 .swiper
   height 600px //calc(100% - 160px)
+  margin-top 7vh
+  &-slide,
+  &-slide-prev
+    visibility: hidden;
+    &-active
+      visibility visible
 
-  &-pagination-bullet
-    // opacity: initial;
-    // background rgba(#FFF, .3) !important
-    background: #FFF;
-  &-pagination-bullet-active
-    background #FFF
+  // &-pagination-bullets
+  //   width 20px
+
+  // &-pagination-bullet
+  //   // opacity: initial;
+  //   // background rgba(#FFF, .3) !important
+  //   background: #FFF;
+  // &-pagination-bullet-active
+  //   background #FFF
   // &-pagination-bullet-active-main
 
 
@@ -182,7 +237,7 @@ export default {
   // min-height 100vh
   // grid-gap: 10px;
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 4fr 3fr;
 
 
 h1

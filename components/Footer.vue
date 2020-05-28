@@ -41,7 +41,7 @@
 
 
 
-  .flex.x_sb.mt-5
+  .flex.x_sb.mt-5.y_base
     .flex.y_center
       img(src='~static/icon/footer_1.svg')
       img.ml-4(src='~static/icon/footer_2.svg')

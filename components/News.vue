@@ -91,7 +91,7 @@ export default {
         breakpoints: {
           1200: {
             slidesPerView: 3,
-            spaceBetween: 50
+            spaceBetween: 60
           },
           820: {
             slidesPerView: 2,
@@ -123,15 +123,47 @@ export default {
 .swiper
   &-container
     padding-bottom: 4em;
+
+
+
+  // &-button-next, &-button-prev
+  //   // position: absolute;
+  //   outline 0
+  //   bottom: 0
+  //   top auto
+  //  &-button-prev
+  //    left 3em
+  //  &-button-next
+  //    right 3em
+
+
   &-button-next, &-button-prev
-    // position: absolute;
     outline 0
-    bottom: 0
-    top auto
-   &-button-prev
-     left 3em
-   &-button-next
-     right 3em
+    top 1em;
+    height 180px
+    width 100px
+    cursor none
+    &:hover
+      &:after
+        box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 5px 8px rgba(0,0,0,.14), 0 1px 14px rgba(0,0,0,.12);
+    &:after
+      cursor pointer
+      content: '';
+      circle(50px);
+      background #FFF
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 2px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04);
+
+  &-button-prev
+    left 0
+    background: linear-gradient(90deg, rgba(#FFF, 0.5) 0%, rgba(#FFF, 0.0001) 99%);
+    &:after
+      background: #FFF url('~static/icon/L.png') no-repeat center;
+  &-button-next
+    right: 0
+    background: linear-gradient(90deg, rgba(#FFF, 0.0001) 0%, rgba(#FFF, 0.5) 99%);
+    &:after
+      background: #FFF url('~static/icon/R.png') no-repeat center;
+
 
 .date
   &:before
