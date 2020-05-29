@@ -165,6 +165,22 @@ export default {
 }
 </script>
 
+//
+<style lang="stylus">
+.swiper-pagination
+  &-bullets
+    width 20px !important
+  &-bullet
+    width 18px !important
+    height 18px !important
+    margin: 10px 0 !important
+    background #FFF
+    &-active
+      // width 18px
+      // height 18px
+      transform: scale(1.4);
+</style>
+
 <style lang="stylus" scoped>
 
 

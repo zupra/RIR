@@ -72,7 +72,6 @@ const DATA = [
     link: '',
     img: 'https://picsum.photos/id/162/360/170'
   },
-
   {
     id: 4,
     title: 'Цифровые сервисы Росатома помогут развитию Томской области',
@@ -138,11 +137,7 @@ export default {
 
 
 .grid
-  // padding .9em 0 1em 1.2em
-  // padding-right 0
   display: grid;
-  // height 392px
-  // overflow hidden
   // grid-gap: 10px;
   // grid-template-columns: 1fr 1fr;
   grid-template-rows: 3.2em 120px;
