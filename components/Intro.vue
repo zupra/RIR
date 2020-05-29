@@ -165,7 +165,6 @@ export default {
 }
 </script>
 
-//
 <style lang="stylus">
 .swiper-pagination
   &-bullets
@@ -173,8 +172,8 @@ export default {
   &-bullet
     width 18px !important
     height 18px !important
-    margin: 10px 0 !important
-    background #FFF
+    // margin: 10px 0 !important
+    background #FFF !important
     &-active
       // width 18px
       // height 18px
