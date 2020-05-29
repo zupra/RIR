@@ -86,7 +86,8 @@
    
       swiper-slide.wrap(
       ) 
-        .flex.x_sb.y_center
+        //- .flex.x_sb.y_center
+        .Grid
           div
             .bold.text_x2.upper.mb-3 РЕШЕНИЕ 
             h1 Умные города 
@@ -153,7 +154,7 @@ export default {
         },
         pagination: {
           el: '.swiper-pagination',
-          // clickable: true,
+          clickable: true,
           dynamicBullets: true
           // bulletClass: 'bullet',
           // bulletActiveClass: 'bullet-active'
@@ -166,18 +167,16 @@ export default {
 </script>
 
 <style lang="stylus">
-.swiper-pagination
-  &-bullets
-    width 20px !important
-  &-bullet
-    width 18px !important
-    height 18px !important
-    // margin: 10px 0 !important
-    background #FFF !important
-    &-active
-      // width 18px
-      // height 18px
-      transform: scale(1.4);
+.Intro
+  .swiper-pagination
+    &-bullets
+      width 20px !important
+    &-bullet
+      width 18px !important
+      height 18px !important
+      // margin: 10px 0 !important
+      background #FFF !important
+      // &-active
 </style>
 
 <style lang="stylus" scoped>
