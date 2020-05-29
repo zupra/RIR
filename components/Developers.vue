@@ -135,6 +135,7 @@ export default {
   height 248px
   // img
   //   display block
+  ripple()
 .grid
   padding .9em 0 1em 1.2em
   // padding-right 0

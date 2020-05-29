@@ -102,4 +102,5 @@ h2
   background #FFF
   &:hover
     transform: translate(0, -6px);
+  ripple()
 </style>
