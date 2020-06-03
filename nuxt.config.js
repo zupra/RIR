@@ -28,10 +28,13 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    { src: './plugins/vue-agile.js', mode: 'client' },
-    // { src: './plugins/vue-animate-onscroll.js', mode: 'client' },
-    { src: './plugins/vue-awesome-swiper.js', mode: 'client' },
-    './plugins/vue-scrollto.js'
+    { src: '@/plugins/vue-agile.js', mode: 'client' },
+    // { src: '@/plugins/vue-animate-onscroll.js', mode: 'client' },
+    { src: '@/plugins/vue-awesome-swiper.js', mode: 'client' },
+    // '@/plugins/vue-clamp.js',
+    // { src: '@/plugins/vue-clamp.js', mode: 'client' },
+    '@/plugins/vue-scrollto.js',
+    '@/plugins/vue-prlx.js'
 
     // 'vue-fullpage.js'
   ],
@@ -75,6 +78,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    transpile: ['vue-clamp', 'resize-detector'],
     extend(config, ctx) {}
   }
 

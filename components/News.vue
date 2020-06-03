@@ -18,14 +18,19 @@ section
 
         //- :src="`https://picsum.photos/id/${idx+10}/280/160`"
         //- :src="require(`~/static/img/сities/${It.id}.jpg`)"
-        //- https://picsum.photos/id/237/200/300
+
         img(
           :src="It.img"
         )
         .date.my-2 {{It.date}}
+
         .grid
           .H.TITLE {{It.title}}
-          p.OVERFLOW {{It.text}}
+          v-clamp(
+            :autoresize="true"
+            :max-lines="6"
+            max-height="6em"
+          ) {{It.text}}
 
       .swiper-pagination(
         slot="pagination"
@@ -42,6 +47,9 @@ section
 </template>
 
 <script>
+// TODO какого глобально не работает
+import VClamp from 'vue-clamp'
+
 const DATA = [
   {
     id: 1,
@@ -84,6 +92,9 @@ const DATA = [
 ]
 
 export default {
+  components: {
+    VClamp
+  },
   data() {
     return {
       newsList: DATA,
@@ -140,16 +151,11 @@ export default {
   display: grid;
   // grid-gap: 10px;
   // grid-template-columns: 1fr 1fr;
-  grid-template-rows: 3.2em 120px;
+  grid-template-rows: 3.2em 6em;
 
-.OVERFLOW
-  height 136px
-  overflow hidden
 
 .TITLE
   line-height 1
-
-
 
 
 .swiper

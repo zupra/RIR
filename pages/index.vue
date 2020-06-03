@@ -6,7 +6,10 @@
       // Сколько вовлечено в проект
       InProject
       // География
-      Geography
+      Geography(
+        style="transform: scale(calc(var(--parallax-value) / 70 ));"
+        v-prlx="{  custom: true,limit: { min: 0, max: 70 }}"
+      )
     //- Возможности
     Capatibilities
     .BR
