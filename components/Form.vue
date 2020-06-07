@@ -35,7 +35,7 @@ export default {}
 <style lang="stylus">
 
 .Form
-  background: #13264D url("~static/img/bg_footer.png") no-repeat center/cover;
+  background: #13264D url("~static/img/bg_2.png") no-repeat center/cover;
   color #FFF
   min-height 100vh
   padding 2em 0

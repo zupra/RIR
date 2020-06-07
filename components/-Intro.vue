@@ -83,7 +83,7 @@
 
 
 .Intro
-  background: #13264D url("~static/img/bg_footer.png") no-repeat center/cover;
+  background: #13264D url("~static/img/bg_2.png") no-repeat center/cover;
   // min-height 100vh
   color #FFF
   padding 1em
