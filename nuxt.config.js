@@ -41,7 +41,8 @@ export default {
     // '@/plugins/vue-clamp.js',
     // { src: '@/plugins/vue-clamp.js', mode: 'client' },
     '@/plugins/vue-scrollto.js',
-    '@/plugins/vue-prlx.js'
+    '@/plugins/vue-prlx.js',
+    '@/plugins/vue-observe-visibility.client.js'
 
     // 'vue-fullpage.js'
   ],
