@@ -18,9 +18,3 @@ div
       br 
       | под потребности города
 </template>
-
-<script>
-export default {}
-</script>
-
-<style lang="stylus" scoped></style>

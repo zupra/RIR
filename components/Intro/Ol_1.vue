@@ -13,9 +13,3 @@ div
       
     li Создаёт уникальные технологические решения на базе перспективных разработкок атомной отрасли
 </template>
-
-<script>
-export default {}
-</script>
-
-<style lang="stylus" scoped></style>

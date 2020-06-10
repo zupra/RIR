@@ -39,7 +39,7 @@
 <script>
 //
 
-import Intro from '~/components/Intro.vue'
+import Intro from '~/components/Intro'
 import Cities from '~/components/Cities.vue'
 import Form from '~/components/Form.vue'
 import Footer from '~/components/Footer.vue'
@@ -101,9 +101,10 @@ h2
 .Card
   shadow()
   border-radius 5px
-  transition 0.3s
   background #FFF
+  transition transform 0.3s
   &:hover
-    transform: translate(0, -6px);
+    transform scale(1.06) //translate(0, -6px);
+    // transform: translate(0, -6px);
   ripple()
 </style>

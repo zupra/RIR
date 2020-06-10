@@ -1,115 +1,81 @@
 <template lang="pug">
 .Intro
-  .topLine
-    .wrap
-      .upper.flex.x_sb.y_center
-        .flex.y_center(
-          v-scroll-to="'#Form'"
-        )
-          img(
-            src="~static/icon/LOGO.png"
-          )
-          .ml-3 умные города
-            br
-            | Росатома
-        div
-          b.scrollTo(
-            v-scroll-to="'#Cities'"
-          ) Города
-          b.scrollTo.mx-5(
-            v-scroll-to="'#Capabilities'"
-          ) Возможности
-          b.scrollTo(
-            v-scroll-to="'#Form'"
-          ) Подать заявку
 
-          //-
-            nuxt-link(
-              :to="{ path: '/', hash:'#About'}"
-            ) О проекте
-            nuxt-link.mx-5(
-              :to="{ path: '/', hash:'#Capabilities'}"
-            ) Возможности
-            nuxt-link(
-              :to="{ path: '/', hash:'#Form'}"
-            ) Подать заявку
-
-      .center
-        img(
-          src="~static/icon/atom.svg"
-        )
-
+  TopLine
    
   client-only
     swiper.swiper(
       :options="swiperOption"
     )
-      swiper-slide.bg_1(
-      ) 
-        //- .flex_wr.x_sb.y_center
+      // 1
+      swiper-slide.bg_1
         .wrap.Grid
-          div
-            .bold.text_x2.upper.mb-3 Разработчик 
-            h1 Русатом 
-              br
-              | Инфраструктурные 
-              br
-              | решения
-            p.my-4.text_x2 Дивизион Госкорпорации “Росатом” - 
-              br
-              | интегратор по направлению “Умный город”
-            .btn.my-5(
-              v-scroll-to="'#About'"
-            ) Узнать больше о решении
-          //
-          IntroOl_1(
+          .subGrid
+            div
+              .bold.text_x2.upper.mb-3 Разработчик 
+              h1 Русатом 
+                br
+                | Инфраструктурные 
+                br
+                | решения
+              .my-4.text_x2 Дивизион Госкорпорации “Росатом” - 
+                br
+                | интегратор по направлению “Умный город”
+            
+            div
+              .btn(
+                v-scroll-to="'#About'"
+              ) Узнать больше о решении
+          //-
+          Ol_1(
             style="margin-right: -4em"
           )
  
-      swiper-slide(
-      ) 
-        //- .flex_wr.x_sb.y_center
+      // 2
+      swiper-slide
         .wrap.Grid
-          div
-            h1 Цифровая 
-              br
-              | платформа 
-              br
-              | ”Умный город” 
-            p.my-4.text_x2 Открытая онлайн-платформа для
-              br
-              | взаимодействия власти и жителей 
-            .btn.my-5(
-              v-scroll-to="'#About'"
-            ) Узнать больше о решении
-          //
-          IntroOl_2
+          .subGrid
+            div
+              h1 Цифровая 
+                br
+                | платформа 
+                br
+                | ”Умный город” 
+              .my-4.text_x2 Открытая онлайн-платформа для
+                br
+                | взаимодействия власти и жителей 
+            
+            div
+              .btn(
+                v-scroll-to="'#About'"
+              ) Узнать больше о решении
+          //-
+          Ol_2
       
 
-   
-      swiper-slide(
-      ) 
-        //- .flex.x_sb.y_center
+      // 3
+      swiper-slide
         .wrap.Grid
-          div
-            .bold.text_x2.upper.mb-3 РЕШЕНИЕ 
-            h1 Умные города 
-              br
-              | Росатома 
-            p.my-4.text_x2 Объединяет «атомные» города 
-              br
-              | на пути цифрового развития
-            .flex
-              .btn_lite Для жителей
-              .btn_lite.mx-3 Для бизнеса
-              .btn_lite Для города 
-            .btn.my-5(
-              v-scroll-to="'#About'"
-            ) Узнать больше о решении
+          .subGrid
+            div
+              .bold.text_x2.upper.mb-3 РЕШЕНИЕ 
+              h1 Умные города 
+                br
+                | Росатома 
+              .my-4.text_x2 Объединяет «атомные» города 
+                br
+                | на пути цифрового развития
+              .flex
+                .btn_lite Для жителей
+                .btn_lite.mx-3 Для бизнеса
+                .btn_lite Для города
+            div
+              .btn(
+                v-scroll-to="'#About'"
+              ) Узнать больше о решении
 
-          //- IntroOl_3
           .flex
-            //- .m_auto.m-3.text_x4 ШАРИКИ ?
+            //-  ШАРИКИ ?
             .m_auto.flex.y_center
               .BALL.BALL_1.flex
                 img.m_auto(
@@ -137,10 +103,15 @@
                   //- )
       
       
-      
       .swiper-pagination(
         slot="pagination"
       )
+    
+  //-    
+    .MORE.wrap  
+      .btn(
+        v-scroll-to="'#About'"
+      ) Узнать больше о решении
 
 </template>
 
@@ -149,15 +120,16 @@ import Lottie from '~/components/Lottie.vue'
 import animation_2 from '~/static/animations/JSON/2.json'
 import animation_5 from '~/static/animations/JSON/5.json'
 //
-import IntroOl_1 from '~/components/IntroOl_1.vue'
-import IntroOl_2 from '~/components/IntroOl_2.vue'
+import TopLine from '~/components/Intro/TopLine.vue'
+import Ol_1 from '~/components/Intro/Ol_1.vue'
+import Ol_2 from '~/components/Intro/Ol_2.vue'
 
 export default {
   components: {
+    TopLine,
     Lottie,
-    IntroOl_1,
-    IntroOl_2
-    // IntroOl_3
+    Ol_1,
+    Ol_2
   },
   data() {
     return {
@@ -193,6 +165,8 @@ export default {
 </script>
 
 <style lang="stylus">
+
+
 .Intro
   .swiper-pagination
     &-bullets
@@ -212,11 +186,9 @@ export default {
     font-weight bold
     font-size 1.2em
 
-
     list-style none
     padding-left 108px
     position relative
-
 
     &:before
       position absolute
@@ -229,18 +201,21 @@ export default {
       font-size 1.4rem
 
       circle(3em)
+      background #FFF
       line-height 3em
       text-align center
-
-      background #FFF
 </style>
 
 <style lang="stylus" scoped>
 
-
-.scrollTo
-  cursor pointer
-
+/*
+.MORE
+  position: absolute;
+  top : 90%;
+  left: 1em;
+  right 1em
+  z-index: 10;
+*/
 
 .BALL
   background #FFF
@@ -292,27 +267,16 @@ export default {
   color #FFF
   // padding 200px 1em 1em
   position relative
-  a
-    color #FFF
-    text-decoration none
 
-.topLine
-  position absolute
-  top 1em
-  left 1em
-  right 1em
-  z-index 10
-  // width 100%
-
-
-
+h1
+  font-size 60px
 
 .Grid
   // min-height 100vh
   // grid-gap: 10px;
   display: grid;
   grid-template-columns: 4fr 3fr;
-
-h1
-  font-size 60px
+.subGrid
+  display: grid;
+  grid-template-rows: 400px 1fr;
 </style>
