@@ -221,6 +221,10 @@ export default {
     background #FFF
     padding 70px 0 2em
     width 220px
+    transition transform 0.3s
+    &:hover
+      transform scale(1.06)
+
   &_logo
     width 100px
     // height 100px

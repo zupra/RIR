@@ -4,14 +4,24 @@
   .wrap
     .subIntro
       // Сколько вовлечено в проект
-      InProject
+      InProject(
+        v-prlx="{ fromBottom: true }"
+      )
+      .BR
+      .BR
+      .BR
+      .BR
+      .BR
+
       // География
       Geography(
-        style="transform: scale(calc(var(--parallax-value) / 70 ));"
-        v-prlx="{  custom: true,limit: { min: 40, max: 70 }}"
+        style="transform: scale(calc(var(--parallax-value) / 70 )); opacity: var(--parallax-value)"
+        v-prlx="{ custom: true, limit: { min: 20, max: 70 }, fromBottom: true}"
       )
     //- Возможности
-    Capatibilities
+    Capatibilities(
+      v-prlx="{ reverse: true }"
+    )
     .BR
     //- Базовые модули
     BaseModules
@@ -31,7 +41,9 @@
     News
     .BR
   // Форма обратной связи
-  Form
+  Form(
+
+  )
   // Подвал
   Footer
 </template>
