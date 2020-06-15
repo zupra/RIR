@@ -2,15 +2,15 @@
 section.Geography
 
   //- .BR
-  //- .BR
   h2.H География
   .MAP
     //- .num.num_bg 12
     .num.num_bg
       animated-number(
-        v-observe-visibility="{callback:CB, intersection:{threshold:0.3,}}"
+        v-observe-visibility="{callback:CB, intersection:{threshold:.7,}}"
         :value="value"
-        :duration="2000"
+        :duration="1000"
+        :delay="1000"
         :round="1"
       )
 
@@ -57,6 +57,8 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-.Geography
-  opacity .4
+// .Geography
+//   opacity .4
+// .MAP
+//   transform translateX(50%)
 </style>

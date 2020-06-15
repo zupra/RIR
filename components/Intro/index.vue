@@ -177,33 +177,6 @@ export default {
       // margin: 10px 0 !important
       background #FFF !important
       // &-active
-
-  ol
-    counter-reset: counter_li;
-
-  li
-    height 5em
-    font-weight bold
-    font-size 1.2em
-
-    list-style none
-    padding-left 108px
-    position relative
-
-    &:before
-      position absolute
-      left 8px
-      // content ''
-      color $blue_l
-      counter-increment: counter_li;
-      content: "0" counter(counter_li);
-      font-weight 800
-      font-size 1.4rem
-
-      circle(3em)
-      background #FFF
-      line-height 3em
-      text-align center
 </style>
 
 <style lang="stylus" scoped>

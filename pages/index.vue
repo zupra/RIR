@@ -5,20 +5,23 @@
     .subIntro
       // Сколько вовлечено в проект
       InProject(
-        v-prlx="{ fromBottom: true }"
+        v-prlx
       )
       .BR
       .BR
       .BR
-      .BR
-      .BR
+      //- .BR
+
+      //- .BR
 
       // География
       Geography(
-        style="transform: scale(calc(var(--parallax-value) / 70 )); opacity: var(--parallax-value)"
-        v-prlx="{ custom: true, limit: { min: 20, max: 70 }, fromBottom: true}"
+        style="transform: scale(calc(var(--parallax-value) / 80 ));"
+        v-prlx="{ custom: true, limit: { min: 10, max: 140 }}"
       )
     //- Возможности
+    .BR
+    .BR
     Capatibilities(
       v-prlx="{ reverse: true }"
     )
@@ -42,10 +45,18 @@
     .BR
   // Форма обратной связи
   Form(
-
+    v-prlx="{ fromBottom: true }"
   )
   // Подвал
-  Footer
+  
+  .BR
+  .BR
+  .BR
+  .BR
+  Footer(
+    v-prlx
+  )
+  .BR
 </template>
 
 <script>
@@ -108,6 +119,7 @@ h2
 .Page
   //background: url("~static/img/ball.png") no-repeat right 100vh/800px;
   background: url("~static/img/ball.png") no-repeat right 100vh/44vw
+  overflow-x: hidden;
   // url("~static/img/ball_2.png")  no-repeat 90% 120vh/50vh;
 
 .Card

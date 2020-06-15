@@ -7,7 +7,7 @@ section
       ref="mySwiper"
       :options="swiperOption"
     )
-      swiper-slide(
+      swiper-slide.ItemNews(
         v-for="It in newsList"
         :key="It.id"
       )
@@ -145,7 +145,11 @@ export default {
 
 <style lang="stylus" scoped>
 
-
+.ItemNews
+  transition transform 0.3s
+  &:hover
+    transform scale(1.06)
+    // shadow()
 
 .grid
   display: grid;

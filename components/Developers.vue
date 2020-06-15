@@ -17,15 +17,21 @@ section
         v-for="It in slides"
         :key="It.id"
       ) 
-        .Item.flex.y_center
+        a.Item.flex.y_center(
+          :href="It.link"
+          target="_blank"
+          :title="It.title"
+        )
           .grid
             .H.text_x1.mb-3 {{It.title}}
             p.OVERFLOW {{It.description}}
-            a.link.mt-3(
-                :href="It.link"
-                :title="It.title"
-                target="_blank"
-              ) Смотреть проект
+            //- a.link.mt-3(
+            //-     :href="It.link"
+            //-     :title="It.title"
+            //-     target="_blank"
+            //-   ) Смотреть проект
+          //- кружок
+          .Disc
           picture
             img(
               :src="require(`~/static/img/projects/${It.id}.png`)"
@@ -130,13 +136,73 @@ export default {
 
 
  .Item
+  text-decoration none
+  color inherit
+  border-radius 12px
+  //
+
+  position: relative;
+  // z-index 2
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
   shadow()
   background #FFF
-  height 248px
-  // img
-  //   display block
-  ripple()
+  height 242px
+  // ripple()
+
+  picture
+    position relative
+    z-index 3
+  img
+    display inline-block
+    // right 0
+    // height 100%
+    // background red
+
+  // transition color .5s, transform 0.5s
+  transition color .5s, transform 0.5s
+
+  &:hover
+    // mix-blend-mode difference
+    // filter: invert(1);
+    // backdrop-filter: invert(1)
+    // transform scale(1.02)
+    // border-radius: 1em;
+    transform: translate(0, -4px);
+    //box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px rgba(0,0,0,.14), 0 1px 18px rgba(0,0,0,.12);
+
+
+
+
+
+
+
+    *
+      color #FFF
+    .Disc
+      opacity 1
+      transform: scale(60, 60);
+
+.Disc
+  circle(1em)
+  background #3889F5
+  opacity 0
+  position absolute
+  z-index 1
+  // top 99%
+  bottom 2px
+  left 2px
+  transition: transform 0.75s
+  // mix-blend-mode difference
+  // filter: invert(1)
+  // backdrop-filter: invert(1)
+
+
+.OVERFLOW
+  height 120px
+  overflow hidden
 .grid
+  z-index 2
   padding .9em 0 1em 1.2em
   // padding-right 0
   display: grid;
@@ -144,17 +210,14 @@ export default {
   // overflow hidden
   // grid-gap: 10px;
   // grid-template-columns: 1fr 1fr;
-  grid-template-rows: 64px 120px 1fr;
+  grid-template-rows: 64px 110px 1fr;
 
-.OVERFLOW
-  height 120px
-  overflow hidden
 
 
 
 .swiper
   margin 0 -8px
-  padding 0 4px
+  padding 4px
   &-container
     padding-bottom: 4em;
   /*
@@ -194,7 +257,7 @@ export default {
       background: #FFF url('~static/icon/L.png') no-repeat center;
   &-button-next
     right: 0
-    background: linear-gradient(90deg, rgba(#F7F7F7, 0.0001) 0%, rgba(#F7F7F7, 0.3) 99%);
+    background: linear-gradient(90deg, rgba(#F7F7F7, 0.0001) 0%, rgba(#F7F7F7, 0.7) 99%);
     &:after
       background: #FFF url('~static/icon/R.png') no-repeat center;
 </style>

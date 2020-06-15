@@ -27,6 +27,9 @@ export default {}
 
 <style lang="stylus" scoped>
 .capabilities
+  padding-top 5em
+
+
   font-size 1.2em
   max-width 1020px
   margin 0 auto
