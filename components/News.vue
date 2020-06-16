@@ -31,6 +31,10 @@ section
             :max-lines="6"
             max-height="6em"
           ) {{It.text}}
+          .flex.x_end
+            .link.mt-2.mr-3(
+              @click="showModal = true"
+            ) Подробно
 
       .swiper-pagination(
         slot="pagination"
@@ -43,12 +47,14 @@ section
         slot="button-next"
       )
 
-
+  Modal(:show.sync="showModal", mod="XL", title='Окно для  «Широкого» контента')
+    iframe(height='480', scrolling='no', title='Flexbox Overview', src='//codepen.io/dimaZubkov/embed/BZLqGv/?height=480&theme-id=0&default-tab=result&embed-version=2', frameborder='no', allowtransparency='true', allowfullscreen='true', style='width: 100%;')
 </template>
 
 <script>
 // TODO какого глобально не работает
 import VClamp from 'vue-clamp'
+import Modal from '~/components/Modal/Modal.vue'
 
 const DATA = [
   {
@@ -93,10 +99,13 @@ const DATA = [
 
 export default {
   components: {
-    VClamp
+    VClamp,
+    Modal
   },
   data() {
     return {
+      showModal: false,
+      // =============
       newsList: DATA,
       swiperOption: {
         // slidesPerView: 4,
@@ -145,17 +154,19 @@ export default {
 
 <style lang="stylus" scoped>
 
+/*
 .ItemNews
   transition transform 0.3s
   &:hover
     transform scale(1.06)
     // shadow()
+*/
 
 .grid
   display: grid;
   // grid-gap: 10px;
   // grid-template-columns: 1fr 1fr;
-  grid-template-rows: 3.2em 6em;
+  grid-template-rows: 3.2em 6em 2em;
 
 
 .TITLE
@@ -167,16 +178,6 @@ export default {
     padding-bottom: 4em;
 
 
-
-  // &-button-next, &-button-prev
-  //   // position: absolute;
-  //   outline 0
-  //   bottom: 0
-  //   top auto
-  //  &-button-prev
-  //    left 3em
-  //  &-button-next
-  //    right 3em
 
 
   &-button-next, &-button-prev

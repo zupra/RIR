@@ -154,6 +154,8 @@ export default {
   height 450px
 
 .agile
+  // &__list
+  //   shadow()
   &__actions
     top: 240px;
     // flex-direction: column;
@@ -178,8 +180,8 @@ export default {
 
 
 .slide
-  //box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 7px rgba(0, 0, 0, 0.13), 0px 2px 20px rgba(0, 0, 0, 0.13);
-  shadow()
+  // box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 7px rgba(0, 0, 0, 0.13), 0px 2px 20px rgba(0, 0, 0, 0.13);
+  // shadow()
   background: #FFF;
   height 400px
   margin-top 50px
@@ -189,7 +191,7 @@ export default {
   &_body
     padding 1em
     padding-right 130px
-
+    // shadow()
 
 
   .id, .atom, .logo

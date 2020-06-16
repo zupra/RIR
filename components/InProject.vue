@@ -6,7 +6,7 @@ section#About
     br
     | участвуют
 
-  WtfSvg#WtfSvg
+  
 
   //- .num 880
   animated-number.num(
@@ -37,10 +37,9 @@ section#About
 
 <script>
 import AnimatedNumber from 'animated-number-vue'
-import WtfSvg from '~/components/WtfSvg'
+
 export default {
   components: {
-    WtfSvg,
     AnimatedNumber
   },
   data() {
@@ -64,14 +63,4 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-#About
-  position relative
-
-
-#WtfSvg
-  position absolute
-  top 5em
-  right -10vw
-  width 40vw
-</style>
+<style lang="stylus" scoped></style>

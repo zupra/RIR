@@ -1,5 +1,6 @@
 <template lang="pug">
 .Page
+  WtfSvg#WtfSvg
   Intro
   .wrap
     .subIntro
@@ -11,12 +12,11 @@
       .BR
       .BR
       //- .BR
-
       //- .BR
 
       // География
       Geography(
-        style="transform: scale(calc(var(--parallax-value) / 80 ));"
+        style="transform: scale(calc(var(--parallax-value) / 80.01 ));"
         v-prlx="{ custom: true, limit: { min: 10, max: 140 }}"
       )
     //- Возможности
@@ -43,25 +43,26 @@
     // Новости
     News
     .BR
-  // Форма обратной связи
-  Form(
+  //- Форма обратной связи
     v-prlx="{ fromBottom: true }"
+  Form(
   )
   // Подвал
   
-  .BR
-  .BR
-  .BR
-  .BR
+  
+  //- .BR
+  //- .BR
+  //- .BR
   Footer(
-    v-prlx
+    v-prlx="{fromBottom: true, preserveInitialPosition: false}"
   )
+  .BR
   .BR
 </template>
 
 <script>
+import WtfSvg from '~/components/WtfSvg'
 //
-
 import Intro from '~/components/Intro'
 import Cities from '~/components/Cities.vue'
 import Form from '~/components/Form.vue'
@@ -76,6 +77,7 @@ import InProject from '~/components/InProject.vue'
 
 export default {
   components: {
+    WtfSvg,
     Intro,
     Cities,
     Form,
@@ -131,4 +133,11 @@ h2
     transform scale(1.06) //translate(0, -6px);
     // transform: translate(0, -6px);
   ripple()
+
+
+#WtfSvg
+  position absolute
+  top calc(100vh + 40px)
+  right 30px
+  width 40vw
 </style>
