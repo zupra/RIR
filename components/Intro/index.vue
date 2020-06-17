@@ -1,5 +1,7 @@
 <template lang="pug">
-.Intro
+.Intro(
+  ref="Intro"
+)
 
   TopLine
    
@@ -116,6 +118,8 @@
 </template>
 
 <script>
+import anime from 'animejs/lib/anime.es.js'
+//
 import Lottie from '~/components/Lottie.vue'
 import animation_2 from '~/static/animations/JSON/2.json'
 import animation_5 from '~/static/animations/JSON/5.json'
@@ -160,6 +164,69 @@ export default {
         }
       }
     }
+  },
+  mounted() {
+    const container = this.$refs.Intro // this.$el // document.querySelector(".anime-container");
+
+    const a = 20
+    const l = 110
+
+    for (let i = 0; i <= l; i += 1) {
+      const angle = 0.1 * i
+      const x = a * angle * Math.cos(angle) + window.innerWidth / 2
+      const y = a * angle * Math.sin(angle) + window.innerHeight / 2
+
+      const n = 15
+
+      for (let j = 0; j < n; j++) {
+        const dot = document.createElement('div')
+        dot.classList.add('dot')
+        container.appendChild(dot)
+
+        const size = anime.random(5, 10)
+
+        dot.style.width = size + 'px'
+        dot.style.height = size + 'px'
+
+        dot.style.left = x + anime.random(-15, 15) + 'px'
+        dot.style.top = y + anime.random(-15, 15) + 'px'
+
+        dot.style.opacity = '0'
+      }
+    }
+
+    anime({
+      loop: true,
+      easing: 'linear',
+      opacity: [
+        { value: 1, duration: 50, delay: anime.stagger(2) },
+        {
+          value: 0,
+          duration() {
+            return anime.random(500, 1500)
+          }
+        }
+      ],
+      width: { value: 2, duration: 500, delay: anime.stagger(2) },
+      height: { value: 2, duration: 500, delay: anime.stagger(2) },
+
+      targets: document.querySelectorAll('.dot'),
+
+      translateX: {
+        value() {
+          return anime.random(-30, 30)
+        },
+        duration: 1500,
+        delay: anime.stagger(2)
+      },
+      translateY: {
+        value() {
+          return anime.random(-30, 30)
+        },
+        duration: 1500,
+        delay: anime.stagger(2)
+      }
+    })
   }
 }
 </script>
@@ -167,7 +234,15 @@ export default {
 <style lang="stylus">
 
 
+.dot
+  position: absolute;
+  z-index 100
+  border-radius: 50%;
+  background-color: $blue_l //hsl(60, 100%, 80%);
+
+
 .Intro
+
   .swiper-pagination
     &-bullets
       width 20px !important
@@ -189,6 +264,11 @@ export default {
   right 1em
   z-index: 10;
 */
+
+
+
+
+
 
 .BALL
   background #FFF
