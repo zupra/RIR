@@ -17,7 +17,11 @@
       //- .BR
 
   .BG
-    .wrap
+    .wrap.SLIDE
+      //- .flex.x_end
+      Slides(
+        v-prlx="{ fromBottom: true }"
+      )
       .subIntro
         // География
         Geography(
@@ -66,6 +70,7 @@
 </template>
 
 <script>
+import Slides from '~/components/Slides.vue'
 import WtfSvg from '~/components/WtfSvg'
 //
 import Intro from '~/components/Intro'
@@ -82,7 +87,9 @@ import InProject from '~/components/InProject.vue'
 
 export default {
   components: {
+    Slides,
     WtfSvg,
+    //
     Intro,
     Cities,
     Form,
@@ -109,6 +116,9 @@ export default {
 
 .BG
   background #FFF
+
+.SLIDE
+  position relative
 
 .subIntro
   line-height 1

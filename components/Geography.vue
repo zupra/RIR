@@ -29,7 +29,7 @@ section.Geography
       .pulse
       .pulse
       .pulse
-    Slides
+    //- Slides
     img.MAP_img.img_w(
       src="~static/img/map.png"
     )
