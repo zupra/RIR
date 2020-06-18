@@ -1,63 +1,68 @@
 <template lang="pug">
 .Page
-  WtfSvg#WtfSvg
+  //- WtfSvg#WtfSvg
   Intro
   .wrap
     .subIntro
       // Сколько вовлечено в проект
-      InProject(
-        v-prlx
-      )
+      .flex.x_sb.y_center
+        InProject(
+          v-prlx
+        )
+        WtfSvg.mt-5
       .BR
       .BR
       .BR
       //- .BR
       //- .BR
 
-      // География
-      Geography(
-        style="transform: scale(calc(var(--parallax-value) / 80.01 ));"
-        v-prlx="{ custom: true, limit: { min: 10, max: 140 }}"
+  .BG
+    .wrap
+      .subIntro
+        // География
+        Geography(
+          style="transform: scale(calc(var(--parallax-value) / 80.01 ));"
+          v-prlx="{ custom: true, limit: { min: 10, max: 140 }}"
+        )
+      //- Возможности
+      .BR
+      .BR
+      Capatibilities(
+        v-prlx="{ reverse: true }"
       )
-    //- Возможности
+      .BR
+      //- Базовые модули
+      BaseModules
+      .BR
+      //- Дополнительные модули
+      AdditionalModules
     .BR
     .BR
-    Capatibilities(
-      v-prlx="{ reverse: true }"
+    //- Города-участники
+    Cities
+    .BR
+    .wrap
+      // Разработчики
+      Developers
+      .BR
+      // Новости
+      News
+      .BR
+    //- Форма обратной связи
+      v-prlx="{ fromBottom: true }"
+    Form(
+    )
+    // Подвал
+    
+    
+    //- .BR
+    //- .BR
+    //- .BR
+    Footer(
+      v-prlx="{fromBottom: true, preserveInitialPosition: false}"
     )
     .BR
-    //- Базовые модули
-    BaseModules
     .BR
-    //- Дополнительные модули
-    AdditionalModules
-  .BR
-  .BR
-  //- Города-участники
-  Cities
-  .BR
-  .wrap
-    // Разработчики
-    Developers
-    .BR
-    // Новости
-    News
-    .BR
-  //- Форма обратной связи
-    v-prlx="{ fromBottom: true }"
-  Form(
-  )
-  // Подвал
-  
-  
-  //- .BR
-  //- .BR
-  //- .BR
-  Footer(
-    v-prlx="{fromBottom: true, preserveInitialPosition: false}"
-  )
-  .BR
-  .BR
 </template>
 
 <script>
@@ -102,7 +107,8 @@ export default {
 
 <style lang="stylus">
 
-
+.BG
+  background #FFF
 
 .subIntro
   line-height 1
@@ -118,11 +124,22 @@ h2
   margin-bottom .7em
 .BR
   height 4rem
+
+
+body
+  background: url("~static/img/ball.png") no-repeat right
+  background-attachment: fixed;
+  background-size: contain;
+  // background-size 44vw
 .Page
   //background: url("~static/img/ball.png") no-repeat right 100vh/800px;
-  background: url("~static/img/ball.png") no-repeat right 100vh/44vw
+  // background: url("~static/img/ball.png") no-repeat right 100vh/44vw
   overflow-x: hidden;
   // url("~static/img/ball_2.png")  no-repeat 90% 120vh/50vh;
+
+
+
+
 
 .Card
   shadow()
@@ -135,9 +152,9 @@ h2
   ripple()
 
 
-#WtfSvg
-  position absolute
-  top calc(100vh + 40px)
-  right 30px
-  width 40vw
+// #WtfSvg
+//   position absolute
+//   top calc(100vh + 40px)
+//   right 30px
+//   width 50vw
 </style>

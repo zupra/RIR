@@ -164,7 +164,9 @@ export default {
         }
       }
     }
-  },
+  }
+
+  /*
   mounted() {
     const container = this.$refs.Intro // this.$el // document.querySelector(".anime-container");
 
@@ -228,6 +230,7 @@ export default {
       }
     })
   }
+  */
 }
 </script>
 
