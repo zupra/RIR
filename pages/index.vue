@@ -29,6 +29,7 @@
       //- Возможности
       .BR
       .BR
+    .wrap
       Capatibilities(
         v-prlx="{ reverse: true }"
       )
