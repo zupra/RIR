@@ -141,7 +141,7 @@ export default {
       animation_5,
       swiperOption: {
         effect: 'fade',
-        // speed: 2500,
+        speed: 1500,
         // loop: false,
         mousewheel: true,
         direction: 'vertical',
@@ -299,11 +299,11 @@ export default {
       background url("~static/img/bg_1.png") no-repeat center/cover;
   &-slide,
   &-slide-prev
-    // visibility: hidden;
-    opacity 0
+    visibility: hidden;
+    // opacity 0
     &-active
-      // visibility visible
-      opacity 1
+      visibility visible
+      // opacity 1
 
   // &-pagination-bullets
   //   width 20px

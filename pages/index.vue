@@ -2,32 +2,30 @@
 .Page
   //- WtfSvg#WtfSvg
   Intro
-  .wrap
-    .subIntro
-      // Сколько вовлечено в проект
-      .flex.x_sb.y_center
-        InProject(
-          v-prlx
-        )
-        WtfSvg.mt-5
-      .BR
-      .BR
-      .BR
-      //- .BR
-      //- .BR
+  .wrap.subIntro
+    // Сколько вовлечено в проект
+    .flex.x_sb.y_center
+      InProject(
+        v-prlx
+      )
+      WtfSvg.mt-5
+    .BR
+    .BR
+    .BR
+    //- .BR
+    //- .BR
 
   .BG
-    .wrap.SLIDE
-      //- .flex.x_end
+    .wrap.SLIDE.subIntro
+
       Slides(
         v-prlx="{ fromBottom: true }"
+      )      
+      // География
+      Geography(
+        style="transform: scale(calc(var(--parallax-value) / 80.01 ));"
+        v-prlx="{ custom: true, limit: { min: 10, max: 140 }}"
       )
-      .subIntro
-        // География
-        Geography(
-          style="transform: scale(calc(var(--parallax-value) / 80.01 ));"
-          v-prlx="{ custom: true, limit: { min: 10, max: 140 }}"
-        )
       //- Возможности
       .BR
       .BR
