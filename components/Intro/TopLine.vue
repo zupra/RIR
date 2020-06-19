@@ -23,13 +23,19 @@
         ) Подать заявку
 
     .center
-      img(
-        src="~static/icon/atom.svg"
-      )
+      //- img(
+      //-   src="~static/icon/atom.svg"
+      //- )
+      TopLine_SVG
 </template>
 
 <script>
-export default {}
+import TopLine_SVG from '~/components/Intro/TopLine_SVG.vue'
+export default {
+  components: {
+    TopLine_SVG
+  }
+}
 </script>
 
 <style lang="stylus">
