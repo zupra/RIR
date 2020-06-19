@@ -90,7 +90,8 @@
                 //-   :width="350"
                 //- )
               .flex_col.x_sa
-                .BALL.BALL_2
+                .BALL.BALL_2.flex
+                  Ball_SVG.m_auto
                 br
                 .BALL.BALL_3.flex
                   img.m_auto(
@@ -120,6 +121,9 @@
 <script>
 import anime from 'animejs/lib/anime.es.js'
 //
+
+import Ball_SVG from '~/components/Intro/Ball_SVG.vue'
+//
 import Lottie from '~/components/Lottie.vue'
 import animation_2 from '~/static/animations/JSON/2.json'
 import animation_5 from '~/static/animations/JSON/5.json'
@@ -133,7 +137,8 @@ export default {
     TopLine,
     Lottie,
     Ol_1,
-    Ol_2
+    Ol_2,
+    Ball_SVG
   },
   data() {
     return {
@@ -280,7 +285,7 @@ export default {
     // background  #FFF url("~static/icon/gifs/2.gif") center no-repeat
   &_2
     circle(250px)
-    background  #FFF url("~static/icon/ball_atom.svg") center no-repeat
+    // background  #FFF url("~static/icon/ball_atom.svg") center no-repeat
   &_3
     circle(300px)
     // background  #FFF url("~static/icon/gifs/5.gif") center no-repeat

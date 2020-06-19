@@ -27,7 +27,7 @@
         stroke-miterlimit="10"
       />
       <circle cx="" cy="" r="5" fill="white">
-        <animateMotion dur="6s" repeatCount="indefinite">
+        <animateMotion dur="8s" repeatCount="indefinite">
           <mpath xlink:href="#motionPathTopLineSVG" />
         </animateMotion>
       </circle>
