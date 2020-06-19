@@ -1,9 +1,8 @@
 <template lang="pug">
 .Page
-  //- WtfSvg#WtfSvg
   Intro
+  // Сколько вовлечено в проект
   .wrap.subIntro
-    // Сколько вовлечено в проект
     .flex.x_sb.y_center
       InProject(
         v-prlx
@@ -12,36 +11,32 @@
     .BR
     .BR
     .BR
-    //- .BR
-    //- .BR
-
   .BG
-    .wrap.SLIDE.subIntro
-
+    // География
+    .wrap.fixSlides.subIntro
       Slides(
         v-prlx="{ fromBottom: true }"
       )      
-      // География
       Geography(
         style="transform: scale(calc(var(--parallax-value) / 80.01 ));"
         v-prlx="{ custom: true, limit: { min: 10, max: 140 }}"
       )
-      //- Возможности
       .BR
       .BR
     .wrap
+      // Возможности
       Capatibilities(
         v-prlx="{ reverse: true }"
       )
       .BR
-      //- Базовые модули
+      // Базовые модули
       BaseModules
       .BR
-      //- Дополнительные модули
+      // Дополнительные модули
       AdditionalModules
     .BR
     .BR
-    //- Города-участники
+    // Города-участники
     Cities
     .BR
     .wrap
@@ -51,16 +46,9 @@
       // Новости
       News
       .BR
-    //- Форма обратной связи
-      v-prlx="{ fromBottom: true }"
-    Form(
-    )
+    // Форма обратной связи
+    Form
     // Подвал
-    
-    
-    //- .BR
-    //- .BR
-    //- .BR
     Footer(
       v-prlx="{fromBottom: true, preserveInitialPosition: false}"
     )
@@ -77,7 +65,7 @@ import Cities from '~/components/Cities.vue'
 import Form from '~/components/Form.vue'
 import Footer from '~/components/Footer.vue'
 import BaseModules from '~/components/BaseModules.vue'
-import AdditionalModules from '~/components/AdditionalModules.vue'
+import AdditionalModules from '~/components/AdditionalModules'
 import Capatibilities from '~/components/Capatibilities.vue'
 import Developers from '~/components/Developers.vue'
 import News from '~/components/News.vue'
@@ -116,7 +104,7 @@ export default {
 .BG
   background #FFF
 
-.SLIDE
+.fixSlides
   position relative
 
 .subIntro
@@ -141,7 +129,6 @@ body
   background-size: contain;
   // background-size 44vw
 .Page
-  //background: url("~static/img/ball.png") no-repeat right 100vh/800px;
   // background: url("~static/img/ball.png") no-repeat right 100vh/44vw
   overflow-x: hidden;
   // url("~static/img/ball_2.png")  no-repeat 90% 120vh/50vh;
@@ -159,11 +146,4 @@ body
     transform scale(1.06) //translate(0, -6px);
     // transform: translate(0, -6px);
   ripple()
-
-
-// #WtfSvg
-//   position absolute
-//   top calc(100vh + 40px)
-//   right 30px
-//   width 50vw
 </style>
