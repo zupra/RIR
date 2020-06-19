@@ -138,7 +138,50 @@
         </animateMotion>
       </use>
 
-      <circle cx="389.356" cy="426.651" r="37.6939" fill="#1A3670" />
+      <circle
+        cx="389.356"
+        cy="426.651"
+        r="30"
+        fill="#1A3670"
+        opacity=".1"
+      ></circle>
+      <circle
+        class="innerCircle"
+        cx="389.356"
+        cy="426.651"
+        r="40"
+        fill="none"
+        stroke="#2D71F7"
+        stroke-width="5%"
+      >
+        <animate
+          attributeType="SVG"
+          attributeName="r"
+          begin="0s"
+          dur="2s"
+          repeatCount="indefinite"
+          from="1%"
+          to="17%"
+        />
+        <animate
+          attributeType="CSS"
+          attributeName="stroke-width"
+          begin="0s"
+          dur="2s"
+          repeatCount="indefinite"
+          from="2"
+          to="0"
+        />
+        <animate
+          attributeType="CSS"
+          attributeName="opacity"
+          begin="0s"
+          dur="2s"
+          repeatCount="indefinite"
+          from=".5"
+          to="0"
+        />
+      </circle>
     </svg>
   </div>
 </template>
