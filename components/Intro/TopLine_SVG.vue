@@ -1,4 +1,4 @@
-<template>
+<template functional>
   <svg
     width="98"
     height="96"
@@ -26,7 +26,7 @@
         stroke-width="2"
         stroke-miterlimit="10"
       />
-      <circle cx="" cy="" r="5" fill="white">
+      <circle cx="" cy="" r="5" fill="white" opacity="1">
         <animateMotion dur="8s" repeatCount="indefinite">
           <mpath xlink:href="#motionPathTopLineSVG" />
         </animateMotion>
