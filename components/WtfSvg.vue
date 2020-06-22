@@ -121,19 +121,19 @@
       />
 
       <use xlink:href="#people">
-        <animateMotion dur="8s" repeatCount="indefinite">
+        <animateMotion dur="10s" repeatCount="indefinite">
           <mpath xlink:href="#motionPath_people" />
         </animateMotion>
       </use>
 
       <use xlink:href="#building">
-        <animateMotion dur="8s" begin="2s" repeatCount="indefinite">
+        <animateMotion dur="10s" begin="2s" repeatCount="indefinite">
           <mpath xlink:href="#motionPath_building" />
         </animateMotion>
       </use>
 
       <use xlink:href="#scheme">
-        <animateMotion dur="8s" begin="5s" repeatCount="indefinite">
+        <animateMotion dur="10s" begin="5s" repeatCount="indefinite">
           <mpath xlink:href="#motionPath_scheme" />
         </animateMotion>
       </use>
