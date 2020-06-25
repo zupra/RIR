@@ -1,13 +1,10 @@
 <template lang="pug">
 
-
   .Slides
-
     client-only
       agile(
         :dots="false"
         fade
-
         autoplay
         pause-on-hover
       )

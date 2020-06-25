@@ -3,7 +3,9 @@
   ref="Intro"
 )
 
-  TopLine
+  TopLine(
+
+  )
    
   client-only
     swiper.swiper(
@@ -119,9 +121,6 @@
 </template>
 
 <script>
-import anime from 'animejs/lib/anime.es.js'
-//
-
 import Ball_SVG from '~/components/Intro/Ball_SVG.vue'
 //
 import Lottie from '~/components/Lottie.vue'
@@ -170,72 +169,6 @@ export default {
       }
     }
   }
-
-  /*
-  mounted() {
-    const container = this.$refs.Intro // this.$el // document.querySelector(".anime-container");
-
-    const a = 20
-    const l = 110
-
-    for (let i = 0; i <= l; i += 1) {
-      const angle = 0.1 * i
-      const x = a * angle * Math.cos(angle) + window.innerWidth / 2
-      const y = a * angle * Math.sin(angle) + window.innerHeight / 2
-
-      const n = 15
-
-      for (let j = 0; j < n; j++) {
-        const dot = document.createElement('div')
-        dot.classList.add('dot')
-        container.appendChild(dot)
-
-        const size = anime.random(5, 10)
-
-        dot.style.width = size + 'px'
-        dot.style.height = size + 'px'
-
-        dot.style.left = x + anime.random(-15, 15) + 'px'
-        dot.style.top = y + anime.random(-15, 15) + 'px'
-
-        dot.style.opacity = '0'
-      }
-    }
-
-    anime({
-      loop: true,
-      easing: 'linear',
-      opacity: [
-        { value: 1, duration: 50, delay: anime.stagger(2) },
-        {
-          value: 0,
-          duration() {
-            return anime.random(500, 1500)
-          }
-        }
-      ],
-      width: { value: 2, duration: 500, delay: anime.stagger(2) },
-      height: { value: 2, duration: 500, delay: anime.stagger(2) },
-
-      targets: document.querySelectorAll('.dot'),
-
-      translateX: {
-        value() {
-          return anime.random(-30, 30)
-        },
-        duration: 1500,
-        delay: anime.stagger(2)
-      },
-      translateY: {
-        value() {
-          return anime.random(-30, 30)
-        },
-        duration: 1500,
-        delay: anime.stagger(2)
-      }
-    })
-  }
-  */
 }
 </script>
 

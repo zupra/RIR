@@ -47,7 +47,10 @@ section
         slot="button-next"
       )
 
-  Modal(:show.sync="showModal", mod="XL", title='Окно для  «Широкого» контента')
+  Modal(:show.sync="showModal", mod="XL")
+    h2(
+      slot="title"
+    ) НОВОСТЬ
     iframe(height='480', scrolling='no', title='Flexbox Overview', src='//codepen.io/dimaZubkov/embed/BZLqGv/?height=480&theme-id=0&default-tab=result&embed-version=2', frameborder='no', allowtransparency='true', allowfullscreen='true', style='width: 100%;')
 </template>
 
@@ -114,10 +117,12 @@ export default {
 
         //
         loop: true,
+        /*
         autoplay: {
           delay: 2500
           // disableOnInteraction: false
         },
+        */
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'

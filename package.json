@@ -15,7 +15,6 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
     "animated-number-vue": "^1.0.0",
-    "animejs": "^3.2.0",
     "lottie-web": "^5.6.10",
     "nuxt": "^2.0.0",
     "swiper": "^5.4.1",
