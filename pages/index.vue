@@ -16,8 +16,11 @@
     .wrap.fixSlides.subIntro
       Slides(
         v-prlx="{ fromBottom: true }"
+        @idx="slides_Idx($event)"
       )      
+        
       Geography(
+        :pulse="pulse"
         style="transform: scale(calc(var(--parallax-value) / 80.01 ));"
         v-prlx="{ custom: true, limit: { min: 10, max: 140 }}"
       )
@@ -88,14 +91,21 @@ export default {
     News,
     Geography,
     InProject
-  }
+  },
   //= ====
-  /*
+
   data() {
-    return {}
+    return {
+      pulse: 1
+    }
+  },
+  methods: {
+    slides_Idx(e) {
+      // currentSlide, nextSlide
+      // console.log(e.currentSlide)
+      this.pulse = e.nextSlide
     }
   }
-  */
 }
 </script>
 

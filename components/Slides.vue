@@ -6,7 +6,9 @@
         :dots="false"
         fade
         autoplay
+        autoplaySpeed="5000"
         pause-on-hover
+        @before-change="$emit('idx', $event)"
       )
         .slide(
           v-for="It in slides"
@@ -136,6 +138,12 @@ export default {
       slides: DATA
     }
   }
+
+  // methods: {
+  //   slides_Idx(e) {
+  //     this.$emit('idx', e.slideNext)
+  //   }
+  // }
 }
 </script>
 
