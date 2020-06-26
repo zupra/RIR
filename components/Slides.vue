@@ -1,6 +1,10 @@
 <template lang="pug">
 
   .Slides
+    // :src="require(`~/static/icon/logo_of_сities/${It.id}.png`)"
+    img.logoCity(
+      :src="require(`~/static/icon/logo_of_сities/${logo}.png`)"
+    )
     client-only
       agile(
         :dots="false"
@@ -8,7 +12,7 @@
         autoplay
         autoplaySpeed="5000"
         pause-on-hover
-        @before-change="$emit('idx', $event)"
+        @before-change="slides_Idx($event)"
       )
         .slide(
           v-for="It in slides"
@@ -26,11 +30,6 @@
             src="~static/icon/atom_w.png"
           )
           
-          img.logo(
-            :src="require(`~/static/icon/logo_of_сities/${It.id}.png`)"
-          )
-
-
           .slide_body
             .city {{It.city}}
             .H.my-2 {{It.region}}
@@ -135,15 +134,18 @@ const DATA = [
 export default {
   data() {
     return {
-      slides: DATA
+      slides: DATA,
+      logo: 1
+    }
+  },
+
+  methods: {
+    slides_Idx(e) {
+      // this.$emit('idx', e.nextSlide)
+      this.$emit('idx', e)
+      this.logo = e.nextSlide + 1
     }
   }
-
-  // methods: {
-  //   slides_Idx(e) {
-  //     this.$emit('idx', e.slideNext)
-  //   }
-  // }
 }
 </script>
 
@@ -152,30 +154,36 @@ export default {
 .Slides
   position absolute
   z-index 10
-  top 5em//0
-  right 0
+  top 3em //0
+  right 1em
 
   width:360px
   height 450px
 
+.logoCity
+  // circle(100px)
+  position absolute
+  z-index 10
+  top -50px
+  right 1em
+
+
 .agile
-  // &__list
-  //   shadow()
+  shadow()
   &__actions
-    top: 240px;
+    top: 194px;
     // flex-direction: column;
     right: 10px;
     position: absolute;
   &__nav-button
     padding 0
+    border 0
     margin-left 10px
     circle(50px)
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 2px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04);
 
     &:hover
       box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 2px rgba(0, 0, 0, 0.04), 0px 1px 10px rgba(0, 0, 0, 0.3);
-
-
     &--prev
       background url("~static/icon/L.png") no-repeat center
     &--next
@@ -184,31 +192,20 @@ export default {
 
 
 
-.slide
-  // box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 7px rgba(0, 0, 0, 0.13), 0px 2px 20px rgba(0, 0, 0, 0.13);
-  // shadow()
-  background: #FFF;
-  height 400px
-  margin-top 50px
-  position relative
 
+
+
+
+.slide
+  background: #FFF;
+  height 360px
+  position relative
 
   &_body
     padding 1em
-    padding-right 130px
-    // shadow()
-
-
-  .id, .atom, .logo
+    padding-right 2em //130px
+  .id, .atom
     position absolute
-
-
-  .logo
-    // circle(100px)
-    // background #000
-    top -50px
-    right 1em
-
   .id
     top 1em
     left 1em
